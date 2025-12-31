@@ -25,6 +25,53 @@ See `context/workflow-rules.md` for complete workflow documentation.
 | `/wp-theme` | Update theme settings via design tokens |
 | `/wp-status` | Check GitOps setup health |
 
+## Working on GitHub Issues
+
+When assigned a GitHub issue, follow this workflow:
+
+### 1. Setup Worktree
+```bash
+git fetch origin
+git worktree add Worktrees/<task-name> -b <type>/<task-name> origin/staging
+cd Worktrees/<task-name>
+```
+
+Branch type conventions:
+- `fix/` - Bug fixes
+- `feature/` - New functionality  
+- `cleanup/` - Refactoring, removing dead code, organizing
+- `docs/` - Documentation only
+
+### 2. Read the Issue
+If given an issue number, fetch details with:
+```bash
+gh issue view <number>
+```
+
+### 3. Verify Setup
+Always confirm before making changes:
+```bash
+pwd && git branch --show-current
+```
+
+### 4. Make Changes
+- ONLY modify files within your assigned scope
+- Do NOT touch files outside your scope
+- Do NOT modify main or staging branches directly
+
+### 5. Commit and PR
+```bash
+git add -A
+git commit -m "<type>(<scope>): <description>"
+git push origin HEAD
+gh pr create --base staging --title "[Issue #<N>] <Title>"
+```
+
+Commit types: `feat`, `fix`, `chore`, `docs`, `refactor`
+
+### 6. Report Back
+Provide the PR URL when complete.
+
 ## How It Works
 
 ```
