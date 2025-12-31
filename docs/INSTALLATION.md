@@ -72,10 +72,10 @@ Upload the Enfold REST Meta plugin to your WordPress installation:
 
 ```bash
 # From your project root
-cd .claude/plugins/enfold-llm/wordpress/enfold-rest-meta/
+cd .claude/plugins/enfold-llm/wordpress/
 
-# ZIP the plugin
-zip -r enfold-rest-meta.zip enfold-rest-meta.php README.md
+# ZIP the plugin directory
+zip -r enfold-rest-meta.zip enfold-rest-meta
 
 # Upload to WordPress via admin panel:
 # 1. Go to Plugins → Add New → Upload Plugin
@@ -160,6 +160,8 @@ Create `.claude-wp.json` in your project root. The structure should match the pr
   }
 }
 ```
+
+**Security Warning:** The `wordpress` section in this file is intended for local development scripts. **Do not commit your username or application password to this file.** The automated deployment workflow uses the `USERNAME` and `APP_PASSWORD` secrets configured in your GitHub repository settings.
 
 ### 3. Verify Setup
 

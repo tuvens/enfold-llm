@@ -25,7 +25,7 @@ In your repo → Settings → Variables:
 - `STAGING_URL` - https://staging.yoursite.com
 
 ### 5. Configure your site
-Create `.claude-wp.json` in your repository root with your site details.
+Create `.claude-wp.json` in your repository root with your site details. **Important:** Do not add credentials to this file; use GitHub secrets.
 
 ### 6. Initialize project
 Run `/wp-setup` in Claude Code, then `/wp-status` to verify.
