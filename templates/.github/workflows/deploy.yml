@@ -24,7 +24,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
       
       - name: Install jq
         run: sudo apt-get install -y jq
@@ -48,7 +48,7 @@ jobs:
           if [[ "${{ github.event.inputs.deploy_all }}" == "true" ]]; then
             FILES=$(find content -name "*.txt" -type f | tr '\n' ' ')
           else
-            FILES=$(git diff --name-only HEAD~1 HEAD -- 'content/' | grep '\.txt' | tr '\n' ' ' || echo "")
+            FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} -- 'content/' | grep '\.txt' | tr '\n' ' ' || echo "")
           fi
           echo "files=$FILES" >> $GITHUB_OUTPUT
           echo "Changed files: $FILES"
@@ -59,7 +59,7 @@ jobs:
           if [[ "${{ github.event.inputs.deploy_all }}" == "true" ]]; then
             THEME_CHANGED="true"
           else
-            THEME_CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'theme/' | grep -q '\.json' && echo "true" || echo "false")
+            THEME_CHANGED=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} -- 'theme/' | grep -q '\.json' && echo "true" || echo "false")
           fi
           echo "changed=$THEME_CHANGED" >> $GITHUB_OUTPUT
           echo "Theme changed: $THEME_CHANGED"
@@ -111,17 +111,19 @@ jobs:
               /tmp/theme-settings.txt
             
             # Deploy theme settings via REST API
-            SETTINGS=$(cat /tmp/theme-settings.txt)
+            PAYLOAD_FILE=$(mktemp)
+            trap "rm -f $PAYLOAD_FILE" EXIT
+            jq -n --rawfile settings /tmp/theme-settings.txt '{"settings": $settings}' > "$PAYLOAD_FILE"
             RESPONSE=$(curl -s -w "\n%{http_code}" \
               -X POST "${{ steps.env.outputs.url }}/wp-json/enfold-gitops/v1/settings" \
               -u "$WP_USERNAME:$WP_APP_PASSWORD" \
               -H "Content-Type: application/json" \
-              -d "{\"settings\": \"$SETTINGS\"}")
+              -d "@$PAYLOAD_FILE")
             
             HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
             BODY=$(echo "$RESPONSE" | head -n -1)
             
-            if [[ "$HTTP_CODE" -eq 200 ]]; then
+            if [[ "$HTTP_CODE" -ge 200 && "$HTTP_CODE" -lt 300 ]]; then
               echo "✅ Theme settings deployed successfully"
               echo "Response: $BODY"
             else
