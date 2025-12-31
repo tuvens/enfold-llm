@@ -26,7 +26,8 @@
     "wp-theme": "commands/wp-theme.md"
   },
   "context": [
-    "context/claude/workflow-rules.md",
+    "context/workflow-rules.md",
+    "context/worktree-guide.md",
     "context/claude/enfold-shortcodes.md",
     "context/claude/theme-customization.md"
   ],
