@@ -28,38 +28,43 @@
   "configuration": {
     "file": ".claude-wp.json",
     "schema": {
-      "wordpress_url": {
-        "type": "string",
-        "description": "Production WordPress URL",
-        "required": true
+      "type": "object",
+      "properties": {
+        "wordpress_url": {
+          "type": "string",
+          "description": "Production WordPress URL"
+        },
+        "staging_url": {
+          "type": "string",
+          "description": "Staging WordPress URL"
+        },
+        "theme": {
+          "type": "string",
+          "enum": ["enfold"],
+          "default": "enfold",
+          "description": "WordPress theme (currently only Enfold supported)"
+        },
+        "content_types": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["pages", "posts", "portfolio", "layouts"]
+          },
+          "default": ["pages"],
+          "description": "Content types to manage via GitOps"
+        },
+        "default_branch": {
+          "type": "string",
+          "default": "main",
+          "description": "Branch that deploys to production"
+        },
+        "staging_branch": {
+          "type": "string",
+          "default": "staging",
+          "description": "Branch that deploys to staging"
+        }
       },
-      "staging_url": {
-        "type": "string",
-        "description": "Staging WordPress URL",
-        "required": false
-      },
-      "theme": {
-        "type": "string",
-        "enum": ["enfold"],
-        "default": "enfold",
-        "description": "WordPress theme (currently only Enfold supported)"
-      },
-      "content_types": {
-        "type": "array",
-        "items": ["pages", "posts", "portfolio", "layouts"],
-        "default": ["pages"],
-        "description": "Content types to manage via GitOps"
-      },
-      "default_branch": {
-        "type": "string",
-        "default": "main",
-        "description": "Branch that deploys to production"
-      },
-      "staging_branch": {
-        "type": "string",
-        "default": "staging",
-        "description": "Branch that deploys to staging"
-      }
+      "required": ["wordpress_url"]
     }
   },
   "context": [
