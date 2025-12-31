@@ -1,8 +1,8 @@
 {
   "meta": {
-    "site": "Forr\u00f3 Federation",
+    "site": "Your Site Name",
     "theme": "Enfold",
-    "export_date": "2025-12-31",
+    "export_date": "YYYY-MM-DD",
     "total_settings": 447
   },
   "colors": {
@@ -76,9 +76,9 @@
     ]
   },
   "assets": {
-    "logo": "https://staging.example.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px-500-x-100-px-1-300x86.png",
-    "favicon": "https://staging.example.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px.png",
-    "preloader_logo": "https://staging.example.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px-500-x-100-px-250-x-71-px.png"
+    "logo": "https://example.com/wp-content/uploads/logo.png",
+    "favicon": "https://example.com/wp-content/uploads/favicon.png",
+    "preloader_logo": "https://example.com/wp-content/uploads/preloader-logo.png"
   },
   "features": {
     "page_preloading": true,
