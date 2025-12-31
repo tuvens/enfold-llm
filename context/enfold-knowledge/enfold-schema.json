@@ -1,0 +1,2943 @@
+{
+  "version": "1.0",
+  "source": "Enfold Theme avia-shortcodes",
+  "total_shortcodes": 86,
+  "total_parameters": 296,
+  "shortcodes": [
+    {
+      "shortcode": "av_animated_numbers",
+      "name": "Animated Numbers",
+      "tab": "Content Elements",
+      "tooltip": "Display an animated Number with subtitle",
+      "self_closing": false,
+      "file": "avia-shortcodes/numbers/numbers.php",
+      "parameters": [
+        {
+          "id": "number",
+          "name": "Number",
+          "description": "Add a number here. It will be animated. You can also add non numerical characters. Valid examples: 24/7, 50.45, 99.9$, 90&percnt;, 35k, 200mm etc. Leading 0 will be kept, separated numbers will be ani",
+          "type": "input",
+          "lockable": true
+        },
+        {
+          "id": "start_from",
+          "name": "Start animation value",
+          "description": "Add a number here to start the animation. Leave blank to start from 0. Only use numerical characters for a valid integer number.",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "content",
+          "name": "Description",
+          "description": "Add some content to be displayed below the number",
+          "type": "textarea",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_blog",
+      "name": "Blog Posts",
+      "tab": "Content Elements",
+      "tooltip": "Displays Posts from your Blog",
+      "self_closing": true,
+      "file": "avia-shortcodes/blog/blog.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_button",
+      "name": "Button",
+      "tab": "Content Elements",
+      "tooltip": "Creates a colored button",
+      "self_closing": true,
+      "file": "avia-shortcodes/buttons/buttons.php",
+      "parameters": [
+        {
+          "id": "label",
+          "name": "Button Label",
+          "description": "This is the text that appears on your button.",
+          "type": "input",
+          "lockable": true
+        },
+        {
+          "id": "title_attr",
+          "name": "Button Title Attribute",
+          "description": "Add a title attribute for this button. This is shown by most browsers as tooltip popup and is also used for aria-label.",
+          "type": "input",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "shortcode": "av_button_big",
+      "name": "Fullwidth Button",
+      "tab": "Content Elements",
+      "tooltip": "Creates a colored button that stretches across the full width",
+      "self_closing": false,
+      "file": "avia-shortcodes/buttons_fullwidth/buttons_fullwidth.php",
+      "parameters": [
+        {
+          "id": "label",
+          "name": "Button Title",
+          "description": "This is the text that appears on your button.",
+          "type": "input"
+        },
+        {
+          "id": "title_attr",
+          "name": "Button Title Attribute",
+          "description": "Add a title attribute for this button. This is shown by most browsers as tooltip popup and is also used for aria-label.",
+          "type": "input",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "shortcode": "av_buttonrow",
+      "name": "Button Row",
+      "tab": "Content Elements",
+      "tooltip": "Displays multiple buttons beside each other",
+      "self_closing": false,
+      "file": "avia-shortcodes/buttonrow/buttonrow.php",
+      "parameters": [
+        {
+          "id": "button_spacing",
+          "name": "Space between buttons",
+          "description": "Define the space between the buttons. Leave blank for default space. Make sure you enter a valid positive number.",
+          "type": "input",
+          "default": "5",
+          "lockable": true
+        },
+        {
+          "id": "label",
+          "name": "Button Label",
+          "description": "This is the text that appears on your button.",
+          "type": "input"
+        },
+        {
+          "id": "title_attr",
+          "name": "Button Title Attribute",
+          "description": "Add a title attribute for this button. This is shown by most browsers as tooltip popup and is also used for aria-label.",
+          "type": "input",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "shortcode": "av_catalogue",
+      "name": "Catalogue",
+      "tab": "Content Elements",
+      "tooltip": "Creates a pricing list",
+      "self_closing": false,
+      "file": "avia-shortcodes/catalogue/catalogue.php",
+      "parameters": [
+        {
+          "id": "title",
+          "name": "List Item Title",
+          "description": "Enter the list item title here",
+          "type": "input",
+          "default": "List Title"
+        },
+        {
+          "id": "content",
+          "name": "List Item Description",
+          "description": "Enter the item description here",
+          "type": "tiny_mce"
+        },
+        {
+          "id": "price",
+          "name": "Pricing",
+          "description": "Enter the price for the item here. Eg: 34$, 55.5\u20ac, \u00a312",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "id",
+          "name": "Thumbnail Image",
+          "description": "Either upload a new, or choose an existing image from your media library",
+          "type": "image",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "id_dynamic",
+          "type": "template"
+        },
+        {
+          "id": "disabled",
+          "name": "Disable Item?",
+          "description": "Temporarily disable and hide the item without deleting it, if its out of stock",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_cell_one_full",
+      "name": "av_cell_one_full",
+      "tab": "Layout Elements",
+      "tooltip": "Creates a single full width column",
+      "self_closing": false,
+      "file": "avia-shortcodes/grid_row/cell.php",
+      "parameters": [
+        {
+          "id": "src",
+          "name": "Custom Background Image",
+          "type": "image",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "shortcode": "av_chart",
+      "name": "Chart",
+      "tab": "Content Elements",
+      "tooltip": "Displays different types of charts based on static user data - or dynamic data with filter",
+      "self_closing": false,
+      "file": "avia-shortcodes/chart/chart.php",
+      "parameters": [
+        {
+          "id": "chart_labels",
+          "name": "X-Axis Labels",
+          "description": "Add the descriptive x-axis lables for your data points. Separate with ;. Number of labels should correspond with number of datapoints. Default labels are created if needed.",
+          "type": "textarea",
+          "default": "Point1;Point2;Point3;Point4",
+          "lockable": true
+        },
+        {
+          "id": "chart_title",
+          "name": "Chart Title",
+          "description": "Enter a title for the chart - better keep it short. Leave empty if not needed. Click outside input field to show more options if needed.",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "container_background",
+          "name": "Container Background Color",
+          "description": "Select a background color for container around the chart area",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "chart_background",
+          "name": "Chart Background Color",
+          "description": "Select a background color for the chart area",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "legend_color",
+          "name": "Legend Text Color",
+          "description": "Select a color for the legend of the data points. Leave empty for default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "x_color",
+          "name": "X-Axis Legend Color",
+          "description": "Select a color for the legend on the x-axis data points. Leave empty for default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "y_color",
+          "name": "Y-Axis Legend Color",
+          "description": "Select a color for the legend on the y-axis values. Leave empty for default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "dataset_label",
+          "name": "Dataset Label",
+          "description": "Define a label for your dataset. Will be displayed above the chart and on hover.",
+          "type": "input"
+        },
+        {
+          "id": "dataset_data",
+          "name": "Dataset Datapoints",
+          "type": "textarea",
+          "default": ""
+        },
+        {
+          "id": "temp_color",
+          "name": "Color Picker Helper",
+          "description": "Select a custom color which you can copy into the color settings textareas below.",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "border_colors",
+          "name": "Border/Line Colors",
+          "description": "Add the border or line colors.",
+          "type": "textarea",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "background_colors",
+          "name": "Background Colors",
+          "description": "Add the background colors.",
+          "type": "textarea",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_codeblock",
+      "name": "Code Block",
+      "tab": "Content Elements",
+      "tooltip": "Add text, shortcodes, HTML, CSS, JavaScript and non executeable codesnippets to your website (without any formatting or text optimization).",
+      "self_closing": false,
+      "file": "avia-shortcodes/codeblock/codeblock.php",
+      "parameters": [
+        {
+          "id": "content",
+          "name": "Code Block Content. Add your own HTML/CSS/Javascript here",
+          "description": "Enter some text/code/shortcode. You can also add plugin shortcodes here. Adding theme shortcodes is supported now for many elements. Be carefull not to nest same named shortcodes because this is not s",
+          "type": "textarea",
+          "default": ""
+        },
+        {
+          "id": "wrapper_element",
+          "name": "Code Wrapper Element",
+          "description": "Wrap your code into a html tag (i.e. pre or code tag). Insert the tag without <>",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "deactivate_wrapper",
+          "name": "Deactivate schema.org markup",
+          "description": "Output the code without any additional wrapper elements. (not recommended)",
+          "type": "checkbox",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "shortcode": "av_comments_list",
+      "name": "Comments",
+      "tab": "Content Elements",
+      "tooltip": "Add a comment form and comments list to the template",
+      "self_closing": true,
+      "file": "avia-shortcodes/comments/comments.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_contact",
+      "name": "Contact Form",
+      "tab": "Content Elements",
+      "tooltip": "Creates a customizable contact form",
+      "self_closing": false,
+      "file": "avia-shortcodes/contact/contact.php",
+      "parameters": [
+        {
+          "id": "title",
+          "name": "Form Title",
+          "description": "Enter a form title that is displayed above the form",
+          "type": "input",
+          "lockable": true
+        },
+        {
+          "id": "button",
+          "name": "Submit Button Label",
+          "description": "Enter the submit buttons label text here",
+          "type": "input",
+          "lockable": true
+        },
+        {
+          "id": "email",
+          "name": "Your E-Mail Address",
+          "description": "Enter one or more E-Mail addresses (separated by comma) where mails should be delivered to.",
+          "type": "input",
+          "lockable": true
+        },
+        {
+          "id": "from_email",
+          "name": "Your From Address",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "subject",
+          "name": "E-Mail Subject",
+          "description": "You can define a custom E-Mail Subject for your form here. If left empty the subject will be",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "autoresponder_email",
+          "name": "Autoresponder From E-Mail Address",
+          "description": "Enter the from E-Mail address for the autoresponder.",
+          "type": "input",
+          "lockable": true
+        },
+        {
+          "id": "autoresponder_reply_to",
+          "name": "Autoresponder Reply To E-Mail Address",
+          "description": "Enter one or more reply to E-Mail addresses (separated by comma) for the autoresponder mail. Leave blank if not needed.",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "autoresponder_subject",
+          "name": "Autoresponder Subject",
+          "description": "Enter a custom subject text to the autoresponder E-Mail. Leave blank to use a default message.",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "autorespond",
+          "name": "Autorespond Text",
+          "description": "Enter a message that will be sent to the users email address once he has submitted the form.",
+          "type": "textarea",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "hide_labels",
+          "name": "Hide Form Labels",
+          "description": "Check if you want to hide form labels above the form elements. The form will instead try to use an inline label (not supported on old browsers)",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_content_slider",
+      "name": "Content Slider",
+      "tab": "Content Elements",
+      "tooltip": "Display a content slider element",
+      "self_closing": false,
+      "file": "avia-shortcodes/contentslider/contentslider.php",
+      "parameters": [
+        {
+          "id": "heading",
+          "name": "Heading",
+          "description": "Do you want to display a heading above the slides?",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "title",
+          "name": "Slide Title",
+          "description": "Enter the slide title here (Better keep it short)",
+          "type": "input",
+          "default": "Slide Title"
+        },
+        {
+          "id": "content",
+          "name": "Slide Content",
+          "description": "Enter some content here",
+          "type": "tiny_mce"
+        }
+      ]
+    },
+    {
+      "shortcode": "av_countdown",
+      "name": "Animated Countdown",
+      "tab": "Content Elements",
+      "tooltip": "Display a countdown to a specific date",
+      "self_closing": true,
+      "file": "avia-shortcodes/countdown/countdown.php",
+      "parameters": [
+        {
+          "id": "timezone",
+          "name": "Timezone",
+          "description": "Select the timezone of your date.",
+          "type": "timezone_choice",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "min",
+          "name": "Smallest time unit",
+          "description": "The smallest unit that will be displayed",
+          "type": "select",
+          "default": "1",
+          "lockable": true
+        },
+        {
+          "id": "max",
+          "name": "Largest time unit",
+          "description": "The largest unit that will be displayed",
+          "type": "select",
+          "default": "5",
+          "lockable": true
+        },
+        {
+          "id": "finished_msg",
+          "name": "Countdown Finished Message",
+          "description": "Enter a small message that is displayed when countdown has finished and hides the numbers. Leave empty if numbers should display 0.",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_custom_layout",
+      "name": "Custom Layout",
+      "tab": "Layout Elements",
+      "tooltip": "Display the content of a custom layout. Also page, posts, portfolio,... can be selected.",
+      "self_closing": true,
+      "file": "avia-shortcodes/custom_layout/custom_layout.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_dropcap1",
+      "name": "Dropcap 1 (Big Letter)",
+      "self_closing": false,
+      "file": "avia-shortcodes/dropcaps.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_dynamic_field",
+      "name": "Dynamic Data",
+      "tab": "Content Elements",
+      "tooltip": "Displays formatted content of a custom field or post data",
+      "self_closing": false,
+      "file": "avia-shortcodes/dynamic_field/dynamic_field.php",
+      "parameters": [
+        {
+          "id": "dynamic_content",
+          "name": "Dynamic Field Content",
+          "type": "textarea",
+          "default": ""
+        },
+        {
+          "id": "color_text",
+          "name": "Text Color",
+          "description": "Select a custom color for the text. Leave blank to use default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_email_spam",
+      "name": "E-Mail Spam Protect",
+      "self_closing": false,
+      "file": "avia-shortcodes/email_spam.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_events_countdown",
+      "name": "Events Countdown",
+      "tab": "Plugin Additions",
+      "tooltip": "Display a countdown to the next upcoming event",
+      "self_closing": true,
+      "file": "avia-shortcodes/events_countdown/events_countdown.php",
+      "parameters": [
+        {
+          "id": "categories",
+          "name": "Which Entries?",
+          "description": "Select one or more taxonomies to get the next event for countdown. If none are selected all events are used.",
+          "type": "select",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "min",
+          "name": "Smallest time unit",
+          "description": "The smallest unit that will be displayed",
+          "type": "select",
+          "default": "1",
+          "lockable": true
+        },
+        {
+          "id": "max",
+          "name": "Largest time unit",
+          "description": "The largest unit that will be displayed",
+          "type": "select",
+          "default": "5",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_feature_image_slider",
+      "name": "Featured Image Slider",
+      "tab": "Media Elements",
+      "tooltip": "Display a Slideshow of featured images from various posts",
+      "self_closing": true,
+      "file": "avia-shortcodes/slideshow_feature_image/slideshow_feature_image.php",
+      "parameters": [
+        {
+          "id": "slider_size",
+          "name": "Slider Width/Height Ratio",
+          "description": "The slider will always stretch the full available width. Here you can enter the corresponding height (eg: 4:3, 16:9) or a fixed height in px (eg: 300px)",
+          "type": "input",
+          "default": "16:9",
+          "lockable": true
+        },
+        {
+          "id": "title_color",
+          "name": "Title Color",
+          "description": "Select a color for the title here. Leave blank for theme default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_font_icon",
+      "name": "Icon",
+      "tab": "Content Elements",
+      "tooltip": "Display an icon with optional hover effect",
+      "self_closing": false,
+      "file": "avia-shortcodes/icon/icon.php",
+      "parameters": [
+        {
+          "id": "content",
+          "name": "Optional Tooltip",
+          "description": "Add a tooltip for this icon. The tooltip will appear on mouse over",
+          "type": "textarea",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "size",
+          "name": "Icon Size",
+          "description": "Enter the font size in px, em or &percnt;",
+          "type": "input",
+          "default": "40px",
+          "lockable": true
+        },
+        {
+          "id": "color",
+          "name": "Icon Color",
+          "description": "Here you can set the color of the icon. Enter no value if you want to use the standard font color.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_fullscreen",
+      "name": "Fullscreen Slider",
+      "tab": "Media Elements",
+      "tooltip": "Display a fullscreen slideshow element",
+      "self_closing": false,
+      "file": "avia-shortcodes/slideshow_fullscreen/slideshow_fullscreen.php",
+      "parameters": [
+        {
+          "id": "id",
+          "name": "Add Images",
+          "description": "Here you can add new Images to the slideshow.",
+          "type": "multi_image",
+          "default": ""
+        },
+        {
+          "id": "size",
+          "name": "Slideshow Image Size",
+          "description": "Choose image size for your slideshow.",
+          "type": "select",
+          "default": "extra_large",
+          "lockable": true
+        },
+        {
+          "id": "perma_caption",
+          "name": "Use first slides caption as permanent caption",
+          "description": "If checked the caption will be placed on top of the slider. Please be aware that all slideshow link settings and other captions will be ignored then",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "scroll_down",
+          "name": "Display a scroll down arrow",
+          "description": "Check if you want to show a button at the bottom of the slider that takes the user to the next section by scrolling down",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "title",
+          "name": "Caption Title",
+          "description": "Enter a caption title for the slide here",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "content",
+          "name": "Caption Text",
+          "description": "Enter some additional caption text",
+          "type": "textarea",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_gallery",
+      "name": "Gallery",
+      "tab": "Media Elements",
+      "tooltip": "Creates a custom gallery",
+      "self_closing": true,
+      "file": "avia-shortcodes/gallery/gallery.php",
+      "parameters": [
+        {
+          "id": "html_lazy_loading",
+          "type": "template"
+        },
+        {
+          "id": "ids",
+          "name": "Edit Gallery",
+          "description": "Create a new Gallery by selecting existing or uploading new images",
+          "type": "gallery",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "ids_dynamic",
+          "type": "template"
+        }
+      ]
+    },
+    {
+      "shortcode": "av_google_map",
+      "name": "Google Map",
+      "tab": "Media Elements",
+      "tooltip": "Display a google map with one or multiple locations",
+      "self_closing": false,
+      "file": "avia-shortcodes/google_maps/google_maps.php",
+      "parameters": [
+        {
+          "id": "zoom_control",
+          "name": "Display Zoom Control?",
+          "description": "Check to display the controls at the right side of the map",
+          "type": "checkbox",
+          "default": "active"
+        },
+        {
+          "id": "streetview_control",
+          "name": "Display Streetview Activation Control?",
+          "description": "Check to display the control to activate streetview at the right side of the map",
+          "type": "checkbox",
+          "default": "active"
+        },
+        {
+          "id": "height",
+          "name": "Map height",
+          "type": "input",
+          "default": "400px"
+        },
+        {
+          "id": "hue",
+          "name": "Custom Overlay Color",
+          "description": "Select a custom color for your Map here. The map will be tinted with that color. Leave empty if you want to use the default map color",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "google_fallback",
+          "name": "Fallback Image to replace Google Maps",
+          "description": "Upload or select a fallback image that is displayed instead of Google Maps or until the map is loaded",
+          "type": "image",
+          "default": ""
+        },
+        {
+          "id": "address",
+          "name": "Full Adress",
+          "type": "gmap_adress",
+          "default": ""
+        },
+        {
+          "id": "content",
+          "name": "Marker Tooltip",
+          "description": "Enter some text here. If the user clicks on the marker the text will be displayed",
+          "type": "textarea",
+          "default": ""
+        },
+        {
+          "id": "marker",
+          "name": "Custom Map Marker Image",
+          "description": "Use a custom Image as marker. (make sure that you use a square image, otherwise it will be cropped)",
+          "type": "image",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "shortcode": "av_heading",
+      "name": "Special Heading",
+      "tab": "Content Elements",
+      "tooltip": "Creates a special Heading",
+      "self_closing": false,
+      "file": "avia-shortcodes/heading/heading.php",
+      "parameters": [
+        {
+          "id": "heading",
+          "name": "Heading Text",
+          "type": "input"
+        }
+      ]
+    },
+    {
+      "shortcode": "av_headline_rotator",
+      "name": "Headline Rotator",
+      "tab": "Content Elements",
+      "tooltip": "Creates a text rotator for dynamic headings",
+      "self_closing": false,
+      "file": "avia-shortcodes/headline_rotator/headline_rotator.php",
+      "parameters": [
+        {
+          "id": "before_rotating",
+          "name": "Prepended static text",
+          "description": "Enter static text that should be displayed before the rotating text",
+          "type": "input"
+        },
+        {
+          "id": "after_rotating",
+          "name": "Appended static text",
+          "description": "Enter static text that should be displayed after the rotating text",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "multiline",
+          "name": "Activate Multiline?",
+          "description": "Check if prepended, rotating and appended text should each be displayed on its own line",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "custom_title",
+          "name": "Custom Font Color",
+          "description": "Select a custom font color. Leave empty to use the default",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "title",
+          "name": "Rotating Text",
+          "description": "Enter the rotating text here (better keep it short)",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_horizontal_gallery",
+      "name": "Horizontal Gallery",
+      "tab": "Media Elements",
+      "tooltip": "Creates a horizontal scrollable gallery",
+      "self_closing": false,
+      "file": "avia-shortcodes/gallery_horizontal/gallery_horizontal.php",
+      "parameters": [
+        {
+          "id": "ids",
+          "name": "Edit Gallery",
+          "description": "Create a new Gallery by selecting existing or uploading new images",
+          "type": "gallery",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "ids_dynamic",
+          "type": "template"
+        },
+        {
+          "id": "initial",
+          "name": "Initial Active Image",
+          "description": "Enter the number of the image that should be focused initially. Leave empty for none, if invalid first image will be taken, if image number does not exist, the last image.",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_hr",
+      "name": "Separator / Whitespace",
+      "tab": "Content Elements",
+      "tooltip": "Creates a delimiter/whitespace to separate elements",
+      "self_closing": true,
+      "file": "avia-shortcodes/hr/hr.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_icon_box",
+      "name": "Icon Box",
+      "tab": "Content Elements",
+      "tooltip": "Creates a content block with icon to the left or above",
+      "self_closing": false,
+      "file": "avia-shortcodes/iconbox/iconbox.php",
+      "parameters": [
+        {
+          "id": "title",
+          "name": "Title",
+          "description": "Add an IconBox title here",
+          "type": "input",
+          "lockable": true
+        },
+        {
+          "id": "content",
+          "name": "Content",
+          "description": "Add some content for this IconBox",
+          "type": "tiny_mce",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_icon_circles",
+      "name": "Icon Circles",
+      "tab": "Content Elements",
+      "tooltip": "Display a big circle with several icons displaying an info note on hover in center",
+      "self_closing": false,
+      "file": "avia-shortcodes/icon_circles/icon_circles.php",
+      "parameters": [
+        {
+          "id": "first_active",
+          "name": "First Active Icon",
+          "description": "Enter the number of the first icon to be active when user scrolls to the element after pageload. Starts with 1. Leave empty if not needed.",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "color_icons",
+          "name": "Icons Color",
+          "description": "Select a custom color for your icons here. Leave blank to use default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "color_icons_bgr",
+          "name": "Icons Background Color",
+          "description": "Select a custom background color for your icons here. Leave blank to use default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "color_icons_hover",
+          "name": "Icons Color On Hover",
+          "description": "Select a custom color for your icons here on hover. Leave blank to use default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "color_icons_bgr_hover",
+          "name": "Icons Background Color On Hover",
+          "description": "Select a custom background color for your icons here. Leave blank to use default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "color_circle",
+          "name": "Circle Color",
+          "description": "Select a custom circle color. Leave blank to use default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "color_text",
+          "name": "Text Color",
+          "description": "Select a custom color for your title and description here. Leave blank to use default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "color_text_bgr",
+          "name": "Text Background Color",
+          "description": "Select a custom color for your text background here. Leave blank to use default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "hide-desc",
+          "name": "Mobile Display Of Description",
+          "description": "Select to hide description text when element is viewed on different devices. Recommended for larger text to avoid overlapping the circle.",
+          "type": "template"
+        },
+        {
+          "id": "title",
+          "name": "Title",
+          "description": "Enter the title for your icon here. Keep it short.",
+          "type": "input",
+          "default": "List Title",
+          "lockable": true
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "type": "textarea",
+          "default": ""
+        },
+        {
+          "id": "color_icon",
+          "name": "Icon Color",
+          "description": "Select a custom color for the icon here. Leave blank to use default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "color_icon_bgr",
+          "name": "Icon Background Color",
+          "description": "Select a custom background color for the icon here. Leave blank to use default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "color_icon_border",
+          "name": "Icon Border Color",
+          "description": "Select a custom border color for the icon here. Leave blank to use default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "color_icon_hover",
+          "name": "Icon Color On Hover",
+          "description": "Select a custom color for the icon here on hover. Leave blank to use default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "color_icon_bgr_hover",
+          "name": "Icon Background Color On Hover",
+          "description": "Select a custom background color for the icon here on hover. Leave blank to use default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "color_icon_border_hover",
+          "name": "Icon Border Color On Hover",
+          "description": "Select a custom border color for the icon here on hover. Leave blank to use default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_icongrid",
+      "name": "Icon/Flipbox Grid",
+      "tab": "Content Elements",
+      "tooltip": "Creates a grid with optional icon, text and background images for tooltips or flipbox",
+      "self_closing": false,
+      "file": "avia-shortcodes/icongrid/icongrid.php",
+      "parameters": [
+        {
+          "id": "items_padding",
+          "name": "Items Content Padding",
+          "description": "Set the padding for the content of a grid item. Both pixel and &percnt; based values are accepted. eg: 30px, 5&percnt;. Leave empty to use theme default.",
+          "type": "template",
+          "default": ""
+        },
+        {
+          "id": "title",
+          "name": "Grid Item Title",
+          "description": "Enter the grid item title here - better keep it short",
+          "type": "input",
+          "default": "Grid Title",
+          "lockable": true
+        },
+        {
+          "id": "subtitle",
+          "name": "Grid Item Sub-Title",
+          "description": "Enter the grid item sub-title here - better keep it short",
+          "type": "textarea",
+          "default": "Grid Sub-Title",
+          "lockable": true
+        },
+        {
+          "id": "content",
+          "name": "Grid Item Content",
+          "type": "tiny_mce",
+          "lockable": true
+        },
+        {
+          "id": "inverse_flip",
+          "name": "Inverse Layout - Ignored For Tooltip",
+          "description": "Check if you want to change front and backside. This will show the backside initially.",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "front_bg_image",
+          "name": "Background Image For Front Side",
+          "type": "image",
+          "default": ""
+        },
+        {
+          "id": "back_bg_image",
+          "name": "Background Image For Backside Flip Box - IGNORED When &quot;Content Appears In Tooltip&quot; Selected",
+          "type": "image",
+          "default": ""
+        },
+        {
+          "id": "item_border_radius",
+          "name": "Border Radius (Front And Flipbox Backside)",
+          "type": "template"
+        },
+        {
+          "id": "item_border_radius_tooltip",
+          "name": "Border Radius Tooltip",
+          "type": "template"
+        },
+        {
+          "id": "item_box_shadow",
+          "type": "template"
+        }
+      ]
+    },
+    {
+      "shortcode": "av_iconlist",
+      "name": "Icon List",
+      "tab": "Content Elements",
+      "tooltip": "Creates a list with nice icons beside",
+      "self_closing": false,
+      "file": "avia-shortcodes/iconlist/iconlist.php",
+      "parameters": [
+        {
+          "id": "title",
+          "name": "List Item Title",
+          "description": "Enter the list item title here (Better keep it short)",
+          "type": "input",
+          "default": "List Title",
+          "lockable": true
+        },
+        {
+          "id": "content",
+          "name": "List Item Content",
+          "description": "Enter some content here",
+          "type": "tiny_mce",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_image",
+      "name": "Image",
+      "tab": "Media Elements",
+      "tooltip": "Inserts an image of your choice",
+      "self_closing": false,
+      "file": "avia-shortcodes/image/image.php",
+      "parameters": [
+        {
+          "id": "av_element_hidden_in_editor",
+          "type": "hidden",
+          "default": "0"
+        },
+        {
+          "id": "title_attr",
+          "name": "Custom Title Attribute",
+          "description": "Add a custom title attribute limited to this instance, replaces media gallery settings.",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "alt_attr",
+          "name": "Custom Alt Attribute",
+          "description": "Add a custom alt attribute limited to this instance, replaces media gallery settings.",
+          "type": "input",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "shortcode": "av_image_diff",
+      "name": "Before-After Images",
+      "tab": "Media Elements",
+      "tooltip": "Shows 2 overlayed images with a moveable divider to show difference between images.",
+      "self_closing": false,
+      "file": "avia-shortcodes/image_diff/image_diff.php",
+      "parameters": [
+        {
+          "id": "av_element_hidden_in_editor",
+          "type": "hidden",
+          "default": "0"
+        },
+        {
+          "id": "after_image",
+          "name": "After Image",
+          "description": "Either upload a new, or choose an existing image from your media library.",
+          "type": "image",
+          "default": ""
+        },
+        {
+          "id": "after_image_dynamic",
+          "type": "template"
+        },
+        {
+          "id": "color_arrows",
+          "name": "Arrows Color",
+          "description": "Select a color for the arrows. Leave empty for theme default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "color_drag_line",
+          "name": "Line Color",
+          "description": "Select a color for the drag lines. Leave empty for theme default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "before_title_attr",
+          "name": "Custom Title Attribute Before Image",
+          "description": "Add a custom title attribute limited to this instance, replaces media gallery settings.",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "before_alt_attr",
+          "name": "Custom Alt Attribute Before Image",
+          "description": "Add a custom alt attribute limited to this instance, replaces media gallery settings.",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "after_title_attr",
+          "name": "Custom Title Attribute After Image",
+          "description": "Add a custom title attribute limited to this instance, replaces media gallery settings.",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "after_alt_attr",
+          "name": "Custom Alt Attribute After Image",
+          "description": "Add a custom alt attribute limited to this instance, replaces media gallery settings.",
+          "type": "input",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "shortcode": "av_image_hotspot",
+      "name": "Image with Hotspots",
+      "tab": "Media Elements",
+      "tooltip": "Inserts an image with one or many hotspots that show tooltips",
+      "self_closing": false,
+      "file": "avia-shortcodes/image_hotspots/image_hotspots.php",
+      "parameters": [
+        {
+          "id": "hotspot_mobile",
+          "name": "Hotspot on mobile devices",
+          "description": "Check if you always want to show the tooltips on mobile phones below the image. Recommended if your tooltips contain a lot of text",
+          "type": "checkbox",
+          "default": "true",
+          "lockable": true
+        },
+        {
+          "id": "hotspot_pos",
+          "type": "hidden",
+          "default": ""
+        },
+        {
+          "id": "content",
+          "name": "Tooltip",
+          "description": "Enter a short descriptive text that appears if the user places his mouse above the hotspot",
+          "type": "tiny_mce",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "shortcode": "av_layerslider",
+      "name": "Advanced Layerslider",
+      "tab": "Media Elements",
+      "tooltip": "Display a Layerslider Slideshow",
+      "self_closing": true,
+      "file": "avia-shortcodes/slideshow_layerslider/slideshow_layerslider.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_layout_row",
+      "name": "Grid Row",
+      "tab": "Layout Elements",
+      "tooltip": "Add multiple Grid Rows below each other to create advanced grid layouts. Cells can be styled individually",
+      "self_closing": false,
+      "file": "avia-shortcodes/grid_row/grid_row.php",
+      "parameters": [
+        {
+          "id": "av_element_hidden_in_editor",
+          "type": "hidden",
+          "default": "0"
+        },
+        {
+          "id": "color",
+          "name": "Section Colors",
+          "type": "select",
+          "default": "main_color",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_leaflet_map",
+      "name": "OSM - Leaflet Map",
+      "tab": "Media Elements",
+      "tooltip": "Displays a map based on OpenStreetMaps and Leaflet Map plugin",
+      "self_closing": false,
+      "file": "avia-shortcodes/leaflet_maps/leaflet_maps.php",
+      "parameters": [
+        {
+          "id": "map_attr",
+          "name": "Additional Map Attributes",
+          "type": "template"
+        },
+        {
+          "id": "content",
+          "name": "Marker Popup",
+          "description": "Enter some text here that will be displayed above the marker. You may also include a link.",
+          "type": "textarea",
+          "default": ""
+        },
+        {
+          "id": "tooltip",
+          "name": "Tooltip",
+          "description": "Enter an optional tooltip that is displayed when you hover over the marker (different from Marker Popup)",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "marker_attr",
+          "name": "Additional Marker Attributes",
+          "type": "template"
+        }
+      ]
+    },
+    {
+      "shortcode": "av_lottie",
+      "name": "Lottie Animation",
+      "tab": "Media Elements",
+      "tooltip": "Inserts a single lottie animation of your choice",
+      "self_closing": false,
+      "file": "avia-shortcodes/lottie_animation/lottie_animation.php",
+      "parameters": [
+        {
+          "id": "av_element_hidden_in_editor",
+          "type": "hidden",
+          "default": "0"
+        },
+        {
+          "id": "lottie_src",
+          "name": "Direct Link",
+          "description": "Enter a hardcoded link to a lottie animation. If not empty this will override any selection from media library.",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "animation_width",
+          "name": "Animation Width",
+          "description": "Add the width of the animation, e.g. 180px, 50&percnt;. Leave empty for default. Both CSS units are allowed, px is default.",
+          "type": "input",
+          "default": "100%",
+          "lockable": true
+        },
+        {
+          "id": "animation_height",
+          "name": "Animation Height",
+          "description": "Add the width of the animation, e.g. 180px, 50&percnt;. Leave empty for default. Both CSS units are allowed, px is default.",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "background",
+          "name": "Background Color",
+          "description": "Select your background color. Leave empty for transparent background",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_magazine",
+      "name": "Magazine",
+      "tab": "Content Elements",
+      "tooltip": "Display entries in a magazine like fashion",
+      "self_closing": true,
+      "file": "avia-shortcodes/magazine/magazine.php",
+      "parameters": [
+        {
+          "id": "tabs",
+          "name": "Display Tabs for each category selected above?",
+          "description": "If checked and you have selected more than one taxonomy above, a tab will be displayed for each of them. Will be ignored when using Pagination.",
+          "type": "checkbox",
+          "default": "true",
+          "lockable": true
+        },
+        {
+          "id": "thumbnails",
+          "name": "Display Thumbnails?",
+          "description": "If checked all entries that got a feature image will show it",
+          "type": "checkbox",
+          "default": "true",
+          "lockable": true
+        },
+        {
+          "id": "meta_author",
+          "name": "Display Author?",
+          "description": "If checked author of this entry will be shown",
+          "type": "checkbox",
+          "default": "true",
+          "lockable": true
+        },
+        {
+          "id": "meta_cats",
+          "name": "Display Categories?",
+          "description": "If checked categories of this entry will be shown",
+          "type": "checkbox",
+          "default": "true",
+          "lockable": true
+        },
+        {
+          "id": "meta_tags",
+          "name": "Display Tags?",
+          "description": "If checked tags of this entry will be shown",
+          "type": "checkbox",
+          "default": "true",
+          "lockable": true
+        },
+        {
+          "id": "heading_active",
+          "name": "Display Element Heading?",
+          "description": "If checked you can enter a heading title with a link for this element",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "first_big",
+          "name": "Should the first entry be displayed bigger?",
+          "description": "If checked the first entry will stand out with big image",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_mailchimp",
+      "name": "Mailchimp Signup",
+      "tab": "Content Elements",
+      "tooltip": "Creates a mailschimp signup form",
+      "self_closing": false,
+      "file": "avia-shortcodes/mailchimp/mailchimp.php",
+      "parameters": [
+        {
+          "id": "list",
+          "name": "Lists",
+          "description": "Select the list that the user should be added to. The form will be build automatically based on the list that you have set up in mailchimp.",
+          "type": "mailchimp_list",
+          "default": ""
+        },
+        {
+          "id": "double_opt_in",
+          "name": "Double opt-in?",
+          "description": "Check if you want people to confirm their email address before being subscribed (highly recommended)",
+          "type": "checkbox",
+          "default": "true"
+        },
+        {
+          "id": "hide_labels",
+          "name": "Hide Form Labels",
+          "description": "Check if you want to hide form labels above the form elements. The form will instead try to use an inline label (not supported on old browsers)",
+          "type": "checkbox",
+          "default": ""
+        },
+        {
+          "id": "id",
+          "type": "hidden",
+          "default": ""
+        },
+        {
+          "id": "type",
+          "type": "hidden",
+          "default": ""
+        },
+        {
+          "id": "check",
+          "type": "hidden",
+          "default": ""
+        },
+        {
+          "id": "options",
+          "type": "hidden",
+          "default": ""
+        },
+        {
+          "id": "label",
+          "name": "Form Element Label",
+          "type": "input",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "shortcode": "av_masonry_entries",
+      "name": "Masonry",
+      "tab": "Content Elements",
+      "tooltip": "Display a fullwidth masonry/grid with blog entries",
+      "self_closing": true,
+      "file": "avia-shortcodes/masonry_entries/masonry_entries.php",
+      "parameters": [
+        {
+          "id": "overlay_fx",
+          "type": "template",
+          "default": "active"
+        }
+      ]
+    },
+    {
+      "shortcode": "av_masonry_gallery",
+      "name": "Masonry Gallery",
+      "tab": "Media Elements",
+      "tooltip": "Display a fullwidth masonry/grid gallery",
+      "self_closing": true,
+      "file": "avia-shortcodes/masonry_gallery/masonry_gallery.php",
+      "parameters": [
+        {
+          "id": "ids",
+          "name": "Edit Gallery",
+          "description": "Create a new Gallery by selecting existing or uploading new images",
+          "type": "gallery",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "overlay_fx",
+          "type": "template",
+          "default": "active"
+        }
+      ]
+    },
+    {
+      "shortcode": "av_notification",
+      "name": "Notification",
+      "tab": "Content Elements",
+      "tooltip": "Creates a notification box to inform visitors",
+      "self_closing": false,
+      "file": "avia-shortcodes/notification/notification.php",
+      "parameters": [
+        {
+          "id": "title",
+          "name": "Title",
+          "description": "This is the small title at the top of your notification.",
+          "type": "input"
+        },
+        {
+          "id": "content",
+          "name": "Message",
+          "description": "This is the text that appears in your notification.",
+          "type": "textarea"
+        },
+        {
+          "id": "nb_border",
+          "type": "template"
+        }
+      ]
+    },
+    {
+      "shortcode": "av_one_full",
+      "name": "av_one_full",
+      "tab": "Layout Elements",
+      "tooltip": "Creates a single full width column",
+      "self_closing": false,
+      "file": "avia-shortcodes/columns/columns.php",
+      "parameters": [
+        {
+          "id": "min_col_height",
+          "name": "Minimum Column Height",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "highlight",
+          "name": "Highlight Column",
+          "description": "Highlight this column by making it slightly bigger",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_partner",
+      "name": "Partner/Logo Element",
+      "tab": "Media Elements",
+      "tooltip": "Display a partner/logo Grid or Slider",
+      "self_closing": false,
+      "file": "avia-shortcodes/logoslider/logoslider.php",
+      "parameters": [
+        {
+          "id": "heading",
+          "name": "Heading",
+          "description": "Enter a heading to display above the images. Leave empty for no heading.",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "id",
+          "name": "Add Images",
+          "description": "Here you can add new Images to the partner/logo element.",
+          "type": "multi_image",
+          "default": ""
+        },
+        {
+          "id": "perma_caption",
+          "name": "Use first slides caption as permanent caption",
+          "description": "If checked the caption will be placed on top of the slider. Please be aware that all slideshow link settings and other captions will be ignored then",
+          "type": "checkbox",
+          "default": ""
+        },
+        {
+          "id": "id_dynamic",
+          "type": "template"
+        },
+        {
+          "id": "hover",
+          "name": "Image Caption",
+          "description": "Display a image caption on hover",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_player",
+      "name": "Audio Player",
+      "tab": "Media Elements",
+      "tooltip": "Add an audio player element",
+      "self_closing": false,
+      "file": "avia-shortcodes/audio-player/audio-player.php",
+      "parameters": [
+        {
+          "id": "id",
+          "name": "Create and Edit Audio Playlist",
+          "description": "Here you can add new audio files to the playlist, remove files or reorder them.",
+          "type": "audio_player",
+          "default": ""
+        },
+        {
+          "id": "cover_id",
+          "name": "Choose a Cover Image",
+          "description": "Either upload a new or choose an existing image from your media library",
+          "type": "image",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "shortcode": "av_portfolio",
+      "name": "Portfolio Grid",
+      "tab": "Content Elements",
+      "tooltip": "Creates a grid of portfolio excerpts",
+      "self_closing": true,
+      "file": "avia-shortcodes/portfolio/portfolio.php",
+      "parameters": [
+        {
+          "id": "categories",
+          "name": "Which Categories Should Be Used For The Portfolio",
+          "description": "You can select multiple categories here. The page will then show posts from only those categories",
+          "type": "select",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_post_metadata",
+      "name": "Post Metadata",
+      "tab": "Content Elements",
+      "tooltip": "Add selected page/post metadata in a textline",
+      "self_closing": false,
+      "file": "avia-shortcodes/post_metadata/post_metadata.php",
+      "parameters": [
+        {
+          "id": "seperator",
+          "name": "Separator",
+          "description": "Will be used to separate multiple metadata",
+          "type": "input",
+          "default": "/",
+          "lockable": true
+        },
+        {
+          "id": "before_meta_content",
+          "name": "Prepend a text",
+          "description": "Enter a text that should be displayed before the selected metadata infos",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "after_meta_content",
+          "name": "Append a text",
+          "description": "Enter a text that should be displayed after the selected metadata infos",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "custom_title",
+          "name": "Custom Font Color",
+          "description": "Select a custom font color. Leave empty to use the default",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "before_meta",
+          "name": "Prepend A Text",
+          "description": "Enter a text that should be displayed before the metadata info",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "after_meta",
+          "name": "Append A Text",
+          "description": "Enter a text that should be displayed after the metadata info",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_postcontent",
+      "name": "Page Content",
+      "tab": "Layout Elements",
+      "tooltip": "Display the content of another page (fullwidth)",
+      "self_closing": true,
+      "file": "avia-shortcodes/postcontent/postcontent.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_postslider",
+      "name": "Post Slider",
+      "tab": "Content Elements",
+      "tooltip": "Display a Slideshow of Post Entries",
+      "self_closing": true,
+      "file": "avia-shortcodes/postslider/postslider.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_product_button",
+      "name": "Product Purchase Button",
+      "tab": "Plugin Additions",
+      "tooltip": "Display the \"Add to cart\" button for the current product",
+      "self_closing": true,
+      "file": "avia-shortcodes/product_snippets/product_snippet_button.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_product_info",
+      "name": "Product Info",
+      "tab": "Plugin Additions",
+      "tooltip": "Display the product information for the current product",
+      "self_closing": true,
+      "file": "avia-shortcodes/product_snippets/product_snippet_info.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_product_meta",
+      "name": "Product Meta Info",
+      "tab": "Plugin Additions",
+      "tooltip": "Display the product meta for the current product",
+      "self_closing": true,
+      "file": "avia-shortcodes/product_snippets/product_snippet_meta.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_product_price",
+      "name": "Product Price",
+      "tab": "Plugin Additions",
+      "tooltip": "Display the price for the current product",
+      "self_closing": true,
+      "file": "avia-shortcodes/product_snippets/product_snippet_price.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_product_review",
+      "name": "Product Reviews",
+      "tab": "Plugin Additions",
+      "tooltip": "Display the reviews and review form for the current product",
+      "self_closing": true,
+      "file": "avia-shortcodes/product_snippets/product_snippet_review.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_product_tabs",
+      "name": "Product Info Tab",
+      "tab": "Plugin Additions",
+      "tooltip": "Display the info and review tab for the current product",
+      "self_closing": true,
+      "file": "avia-shortcodes/product_snippets/product_snippet_tabs.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_product_upsells",
+      "name": "Related Products",
+      "tab": "Plugin Additions",
+      "tooltip": "Display a list of related products and/or up-sells",
+      "self_closing": true,
+      "file": "avia-shortcodes/product_snippets/product_snippet_upsells.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_productgrid",
+      "name": "Product Grid",
+      "tab": "Plugin Additions",
+      "tooltip": "Display a Grid of Product Entries",
+      "self_closing": true,
+      "file": "avia-shortcodes/product_grid/product_grid.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_productlist",
+      "name": "Product List",
+      "tab": "Plugin Additions",
+      "tooltip": "Display a List of Product Entries",
+      "self_closing": true,
+      "file": "avia-shortcodes/product_list/product_list.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_productslider",
+      "name": "Product Slider",
+      "tab": "Plugin Additions",
+      "tooltip": "Display a Slideshow of Product Entries",
+      "self_closing": true,
+      "file": "avia-shortcodes/productslider/productslider.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_progress",
+      "name": "Progress Bars",
+      "tab": "Content Elements",
+      "tooltip": "Create some progress bars",
+      "self_closing": false,
+      "file": "avia-shortcodes/progressbar/progressbar.php",
+      "parameters": [
+        {
+          "id": "title",
+          "name": "Progress Bars Title",
+          "description": "Enter the Progress Bars title here",
+          "type": "input",
+          "lockable": true
+        },
+        {
+          "id": "color3",
+          "name": "Progress Container Background Color",
+          "description": "This color fills up the progress container to 100 &percnt;. Leave empty for theme default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "color_title",
+          "name": "Title Font Color",
+          "description": "Select a custom font color for title, icon and progress bar percentage. Leave empty for theme default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "color_title_back",
+          "name": "Title Background Color",
+          "description": "Select a custom color for background of the title, icon and progress bar percentage. Leave empty for theme default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_promobox",
+      "name": "Promo Box",
+      "tab": "Content Elements",
+      "tooltip": "Creates a notification box with call to action button",
+      "self_closing": false,
+      "file": "avia-shortcodes/promobox/promobox.php",
+      "parameters": [
+        {
+          "id": "content",
+          "name": "Content",
+          "description": "Enter some content for Promo Box",
+          "type": "tiny_mce"
+        }
+      ]
+    },
+    {
+      "shortcode": "av_revolutionslider",
+      "name": "Fullwidth Revolution Slider",
+      "tab": "Plugin Additions",
+      "tooltip": "Display a fullwidth Revolution Slider",
+      "self_closing": true,
+      "file": "avia-shortcodes/slideshow_revolution/slideshow_revolution.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_sb_instagram_feed",
+      "name": "Instagram Feed",
+      "tab": "Plugin Additions",
+      "tooltip": "Display an Instagram feed (Smash Balloon Plugin)",
+      "self_closing": true,
+      "file": "avia-shortcodes/instagram_feed/instagram_feed.php",
+      "parameters": [
+        {
+          "id": "excludewords",
+          "name": "Exclude Content",
+          "description": "Remove content which contain certain words or hashtags in the caption. Separate multiple entries by commas (e.g. #awesome,#mytag)",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "includewords",
+          "name": "Filter Content",
+          "description": "Only display content which contain certain words or hashtags in the caption. Separate multiple entries by commas (e.g. #awesome,#mytag)",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "whitelist",
+          "name": "Whitelist Content",
+          "description": "Only display content that match one of the post ids in this \"whitelist\". Separate multiple entries by commas (e.g. 2,125)",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "width",
+          "name": "Width",
+          "description": "The width of your feed. Any number, add px (= default) or %.",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "height",
+          "name": "Height",
+          "description": "The height of your feed. Any number, add px (= default) or %.",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "background",
+          "name": "Background color of the feed",
+          "description": "Set a custom background color. Any hex color code.",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "class",
+          "name": "Custom CSS Class",
+          "description": "Add a CSS class to the feed container.",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "imagepadding",
+          "name": "Spacing",
+          "description": "The spacing around your photos. Any number, add px (= default) or %.",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "headercolor",
+          "name": "Headercolor",
+          "description": "Set a custom color. Any hex color code.",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "buttoncolor",
+          "name": "Background color of the button",
+          "description": "Set a custom color. Any hex color code.",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "buttontextcolor",
+          "name": "Text color of the button",
+          "description": "Set a custom color. Any hex color code.",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "buttontext",
+          "name": "Button text",
+          "description": "Enter text used for the button.",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "followcolor",
+          "name": "Background color of the button",
+          "description": "Set a custom color. Any hex color code.",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "followtextcolor",
+          "name": "Text color of the button",
+          "description": "Set a custom color. Any hex color code.",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "followtext",
+          "name": "Button text",
+          "description": "Enter text used for the button.",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "hovercolor",
+          "name": "Background color when hovering over a photo",
+          "description": "Set a custom color. Any hex color code.",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "hovertextcolor",
+          "name": "Text/icon color when hovering over a photo",
+          "description": "Set a custom color. Any hex color code.",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "captionlength",
+          "name": "Number of characters",
+          "description": "The number of characters of the caption to display. Any number.",
+          "type": "input_number",
+          "default": ""
+        },
+        {
+          "id": "captioncolor",
+          "name": "Text color of the caption",
+          "description": "Set a custom color. Any hex color code.",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "captionsize",
+          "name": "Size of caption text",
+          "description": "The size of the caption text. Any number.",
+          "type": "input_number",
+          "default": ""
+        },
+        {
+          "id": "likescolor",
+          "name": "Color of the Likes & Comments",
+          "description": "Set a custom color. Any hex color code.",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "likessize",
+          "name": "Size of Likes & Comments",
+          "description": "The size of the text. Any number.",
+          "type": "input_number",
+          "default": ""
+        },
+        {
+          "id": "numcomments",
+          "name": "Number of comments to show",
+          "description": "Enter the number of comments to show in the lightbox. Any number.",
+          "type": "input_number",
+          "default": ""
+        },
+        {
+          "id": "autoscrolldistance",
+          "name": "Autoscroll distance",
+          "description": "Enter the distance before the end of feed or page that triggers the loading of more content. Any number.",
+          "type": "input",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "shortcode": "av_sc_page_split",
+      "name": "Page Split",
+      "tab": "Layout Elements",
+      "tooltip": "Add a page split to the template. A pagination helps the user to navigate to the previous/next content part. Do not use together with other pagination on this page.",
+      "self_closing": true,
+      "file": "avia-shortcodes/page_split.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_section",
+      "name": "Color Section",
+      "tab": "Layout Elements",
+      "tooltip": "Creates a section with unique background image and colors",
+      "self_closing": false,
+      "file": "avia-shortcodes/section/section.php",
+      "parameters": [
+        {
+          "id": "av_element_hidden_in_editor",
+          "type": "hidden",
+          "default": "0"
+        },
+        {
+          "id": "padding",
+          "name": "Section Padding",
+          "description": "Define the sections top and bottom padding",
+          "type": "select",
+          "lockable": true
+        },
+        {
+          "id": "margin",
+          "name": "Custom Margins",
+          "description": "If checked allows you to set a custom top and bottom margin. Otherwise the margin is calculated by the theme based on surrounding elements",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "color",
+          "name": "Section Colors",
+          "description": "The section will use the color scheme you select. Color schemes are defined on your styling page",
+          "type": "select",
+          "default": "main_color",
+          "lockable": true
+        },
+        {
+          "id": "video",
+          "name": "Background Video",
+          "description": "You can also place a video as background for your section. Enter the URL to the Video. Currently supported are Youtube, Vimeo and direct linking of web-video files (mp4, webm, ogv)",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "overlay_enable",
+          "name": "Enable Overlay?",
+          "description": "Check if you want to display a transparent color and/or pattern overlay above your section background image/video",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "scroll_down",
+          "name": "Display A Scroll Down Arrow",
+          "description": "Check if you want to show a button at the bottom of the section that takes the user to the next section by scrolling down",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_sidebar",
+      "name": "Widget Area",
+      "tab": "Content Elements",
+      "tooltip": "Display one of the themes widget areas",
+      "self_closing": true,
+      "file": "avia-shortcodes/widgetarea/widgetarea.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_slide_section",
+      "name": "Slideshow Section",
+      "tab": "Layout Elements",
+      "tooltip": "Add a fullwidth section with slides that can contain columns and other elements",
+      "self_closing": false,
+      "file": "avia-shortcodes/slideshow_section/slideshow_section.php",
+      "parameters": [
+        {
+          "id": "av_element_hidden_in_editor",
+          "type": "hidden",
+          "default": "0"
+        },
+        {
+          "id": "av_admin_tab_active",
+          "type": "hidden",
+          "default": "1"
+        },
+        {
+          "id": "initial",
+          "name": "Initial Open Slide",
+          "description": "Enter the number of the slide that should be shown initially (starting with 1). If slide number does not exist the first slide is taken.",
+          "type": "input_number",
+          "default": "1"
+        }
+      ]
+    },
+    {
+      "shortcode": "av_slide_sub_section",
+      "name": "av_slide_sub_section",
+      "tab": "Layout Elements",
+      "tooltip": "Creates a single slide for the slideshow section element",
+      "self_closing": false,
+      "file": "avia-shortcodes/slideshow_section/slideshow_sub_section.php",
+      "parameters": [
+        {
+          "id": "tab_title",
+          "name": "Slide Title",
+          "description": "Enter a title to display in the tabs above the slides",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "color",
+          "name": "Active Slide Tab Font Color",
+          "description": "Select a custom font color for this tab when active. Leave empty for default color",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "inactive_color",
+          "name": "Inactive Slide Tab Font Color",
+          "description": "Select a custom font color for this tab when inactive. Leave empty for default color",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "color_hover",
+          "name": "Active Slide Tab Font Color On Hover",
+          "description": "Select a custom font color for this tab when active. Leave empty for default color",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "inactive_color_hover",
+          "name": "Inactive Slide Tab Font Color On Hover",
+          "description": "Select a custom font color for this tab when inactive. Leave empty for default color",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "background_color",
+          "name": "Custom Background Color",
+          "description": "Select a custom background color for this section here. Leave empty for default color",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "src",
+          "name": "Custom Background Image",
+          "type": "image",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "shortcode": "av_slideshow",
+      "name": "Easy Slider",
+      "tab": "Media Elements",
+      "tooltip": "Display a simple slideshow element",
+      "self_closing": false,
+      "file": "avia-shortcodes/slideshow/slideshow.php",
+      "parameters": [
+        {
+          "id": "id",
+          "name": "Add Images",
+          "description": "Here you can add new Images to the slideshow.",
+          "type": "multi_image",
+          "default": ""
+        },
+        {
+          "id": "perma_caption",
+          "name": "Use first slides caption as permanent caption",
+          "description": "If checked the caption will be placed on top of the slider. Please note that slideshow link settings and other captions will be ignored, and player controls will not be accessible when this option is ",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "title",
+          "name": "Caption Title",
+          "description": "Enter a caption title for the slide here",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "content",
+          "name": "Caption Text",
+          "description": "Enter some additional caption text",
+          "type": "textarea",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_slideshow_accordion",
+      "name": "Accordion Slider",
+      "tab": "Media Elements",
+      "tooltip": "Display an accordion slider with images or post entries",
+      "self_closing": false,
+      "file": "avia-shortcodes/slideshow_accordion/slideshow_accordion.php",
+      "parameters": [
+        {
+          "id": "id",
+          "name": "Add Images",
+          "description": "Here you can add new Images to the slideshow.",
+          "type": "multi_image",
+          "default": ""
+        },
+        {
+          "id": "size",
+          "name": "Accordion Image Size",
+          "description": "Choose image and Video size for your slideshow.",
+          "type": "select",
+          "default": "featured",
+          "lockable": true
+        },
+        {
+          "id": "title_color",
+          "name": "Title Color",
+          "description": "Select a color for the title here. Leave blank for theme default.",
+          "type": "colorpicker",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "title",
+          "name": "Caption Title",
+          "description": "Enter a caption title for the slide here",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "content",
+          "name": "Caption Text",
+          "description": "Enter some additional caption text",
+          "type": "textarea",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_slideshow_full",
+      "name": "Fullwidth Easy Slider",
+      "tab": "Media Elements",
+      "tooltip": "Display a simple fullwidth slideshow element",
+      "self_closing": false,
+      "file": "avia-shortcodes/slideshow_fullsize/slideshow_fullsize.php",
+      "parameters": [
+        {
+          "id": "id",
+          "name": "Add Images",
+          "description": "Here you can add new Images to the slideshow.",
+          "type": "multi_image",
+          "default": ""
+        },
+        {
+          "id": "size",
+          "name": "Slideshow Image and Video Size",
+          "description": "Choose image and Video size for your slideshow.",
+          "type": "select",
+          "default": "featured",
+          "lockable": true
+        },
+        {
+          "id": "min_height",
+          "name": "Slider minimum height in pixel",
+          "description": "This is helpful on smaller screens if you got a lot of text in your slider",
+          "type": "input",
+          "default": "0px",
+          "lockable": true
+        },
+        {
+          "id": "perma_caption",
+          "name": "Use first slides caption as permanent caption",
+          "description": "If checked the caption will be placed on top of the slider. Please be aware that all slideshow link settings and other captions will be ignored then",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "title",
+          "name": "Caption Title",
+          "description": "Enter a caption title for the slide here",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "content",
+          "name": "Caption Text",
+          "description": "Enter some additional caption text",
+          "type": "textarea",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_social_share",
+      "name": "Social Buttons",
+      "tab": "Content Elements",
+      "tooltip": "Create one or more social buttons to share a post or to link to your social profile",
+      "self_closing": true,
+      "file": "avia-shortcodes/social_share/social_share.php",
+      "parameters": [
+        {
+          "id": "title",
+          "name": "Small title",
+          "description": "A small title above the buttons.",
+          "type": "input",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_submenu",
+      "name": "Fullwidth Sub Menu",
+      "tab": "Content Elements",
+      "tooltip": "Display a sub menu",
+      "self_closing": false,
+      "file": "avia-shortcodes/menu/menu.php",
+      "parameters": [
+        {
+          "id": "sticky",
+          "name": "Sticky Submenu",
+          "description": "If checked the menu will stick at the top of the page once it touches it. This option is ignored when burger menu icon is shown.",
+          "type": "checkbox",
+          "default": "true"
+        },
+        {
+          "id": "color",
+          "name": "Menu Colors",
+          "type": "select",
+          "default": "main_color"
+        },
+        {
+          "id": "title",
+          "name": "Menu Text",
+          "description": "Enter the menu text here",
+          "type": "input",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "shortcode": "av_tab_container",
+      "name": "Tabs",
+      "tab": "Content Elements",
+      "tooltip": "Creates a tabbed content area",
+      "self_closing": false,
+      "file": "avia-shortcodes/tabs/tabs.php",
+      "parameters": [
+        {
+          "id": "initial",
+          "name": "Initial Open",
+          "description": "Enter the Number of the Tab that should be open initially.",
+          "type": "input",
+          "default": "1",
+          "lockable": true
+        },
+        {
+          "id": "title",
+          "name": "Tab Title",
+          "description": "Enter the tab title here (Better keep it short)",
+          "type": "input",
+          "default": "Tab Title",
+          "lockable": true
+        },
+        {
+          "id": "content",
+          "name": "Tab Content",
+          "description": "Enter some content here",
+          "type": "tiny_mce",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_tab_section",
+      "name": "Tab Section",
+      "tab": "Layout Elements",
+      "tooltip": "Add a fullwidth section with tabs that can contain columns and other elements",
+      "self_closing": false,
+      "file": "avia-shortcodes/tab_section/tab_section.php",
+      "parameters": [
+        {
+          "id": "av_element_hidden_in_editor",
+          "type": "hidden",
+          "default": "0"
+        },
+        {
+          "id": "av_admin_tab_active",
+          "type": "hidden",
+          "default": "1"
+        },
+        {
+          "id": "initial",
+          "name": "Initial Open",
+          "description": "Enter the number of the tab that should be open initially (starting with 1). If tab number does not exist the first tab is taken.",
+          "type": "input_number",
+          "default": "1"
+        },
+        {
+          "id": "bg_color",
+          "name": "Tab Title Background Color",
+          "description": "Select a custom background color of the tab title bar. Enter no value if you want to use the standard color.",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "color",
+          "name": "Tab Font Color",
+          "description": "Select a custom text color for all tabs. Enter no value if you want to use the standard font color.",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "active_color",
+          "name": "Active Tab Font Color",
+          "description": "Select a custom text color for the active tab. Enter no value if you want to use the standard font color.",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "color_hover",
+          "name": "Tab Font Color On Hover",
+          "description": "Select a custom text color for all tabs on hover. Enter no value if you want to use the standard font color.",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "active_color_hover",
+          "name": "Active Tab Font Color On Hover",
+          "description": "Select a custom text color for the active tab on hover. Enter no value if you want to use the standard font color.",
+          "type": "colorpicker",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "shortcode": "av_tab_sub_section",
+      "name": "av_tab_sub_section",
+      "tab": "Layout Elements",
+      "tooltip": "Creates a single tab for the tab section element",
+      "self_closing": false,
+      "file": "avia-shortcodes/tab_section/tab_sub_section.php",
+      "parameters": [
+        {
+          "id": "tab_title",
+          "name": "Tab Title",
+          "description": "Set a tab title",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "color",
+          "name": "Active Tab Font Color",
+          "description": "Select a custom font color for this tab when active. Leave empty for default color",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "inactive_color",
+          "name": "Inactive Tab Font Color",
+          "description": "Select a custom font color for this tab when inactive. Leave empty for default color",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "color_hover",
+          "name": "Active Tab Font Color On Hover",
+          "description": "Select a custom font color for this tab when active. Leave empty for default color",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "inactive_color_hover",
+          "name": "Inactive Tab Font Color On Hover",
+          "description": "Select a custom font color for this tab when inactive. Leave empty for default color",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "background_color",
+          "name": "Custom Background Color",
+          "description": "Select a custom background color for this section here. Leave empty for default color",
+          "type": "colorpicker",
+          "default": ""
+        },
+        {
+          "id": "src",
+          "name": "Custom Background Image",
+          "type": "image",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "shortcode": "av_table",
+      "name": "Table",
+      "tab": "Content Elements",
+      "tooltip": "Creates a data or pricing table",
+      "self_closing": false,
+      "file": "avia-shortcodes/table/table.php",
+      "parameters": []
+    },
+    {
+      "shortcode": "av_team_member",
+      "name": "Team Member",
+      "tab": "Content Elements",
+      "tooltip": "Display a team members image with additional information",
+      "self_closing": false,
+      "file": "avia-shortcodes/team/team.php",
+      "parameters": [
+        {
+          "id": "name",
+          "name": "Team Member Name",
+          "description": "Name of the person",
+          "type": "input",
+          "default": "John Doe",
+          "lockable": true
+        },
+        {
+          "id": "job",
+          "name": "Team Member Job Title",
+          "description": "Job title of the person.",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "description",
+          "name": "Team Member Description",
+          "description": "Enter a few words that describe the person",
+          "type": "textarea",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "border",
+          "type": "template"
+        },
+        {
+          "id": "title",
+          "name": "Hover Text",
+          "description": "Text that appears if you place your mouse above the Icon",
+          "type": "input",
+          "lockable": true
+        },
+        {
+          "id": "link",
+          "name": "Icon Link",
+          "description": "Enter the URL of the page you want to link to",
+          "type": "input",
+          "default": "https://"
+        }
+      ]
+    },
+    {
+      "shortcode": "av_testimonials",
+      "name": "Testimonials",
+      "tab": "Content Elements",
+      "tooltip": "Creates a Testimonial Grid",
+      "self_closing": false,
+      "file": "avia-shortcodes/testimonials/testimonials.php",
+      "parameters": [
+        {
+          "id": "src",
+          "name": "Image",
+          "description": "Either upload a new, or choose an existing image from your media library",
+          "type": "image",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "name",
+          "name": "Name",
+          "description": "Enter the Name of the person to quote",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "subtitle",
+          "name": "Subtitle below name",
+          "description": "Can be used for a job description",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "content",
+          "name": "Quote",
+          "description": "Enter the testimonial here",
+          "type": "tiny_mce",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "link",
+          "name": "Website Link",
+          "description": "Link to the persons website",
+          "type": "input",
+          "default": "https://"
+        },
+        {
+          "id": "linktext",
+          "name": "Website Name",
+          "description": "Linktext for the above Link",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_textblock",
+      "name": "Text Block",
+      "tab": "Content Elements",
+      "tooltip": "Creates a simple text block with collapse support",
+      "self_closing": false,
+      "file": "avia-shortcodes/textblock/textblock.php",
+      "parameters": [
+        {
+          "id": "content",
+          "name": "Content",
+          "description": "Enter some content for this textblock",
+          "type": "tiny_mce"
+        }
+      ]
+    },
+    {
+      "shortcode": "av_timeline",
+      "name": "Timeline",
+      "tab": "Content Elements",
+      "tooltip": "Creates a timeline",
+      "self_closing": false,
+      "file": "avia-shortcodes/timeline/timeline.php",
+      "parameters": [
+        {
+          "id": "date",
+          "name": "Milestone Date",
+          "description": "Enter the milestone date here. This can be any format. Use filter avf_customize_heading_settings to change the html tag.",
+          "type": "input",
+          "default": "2018",
+          "lockable": true
+        },
+        {
+          "id": "title",
+          "name": "Milestone Title",
+          "description": "Enter the Milestone Title here. Use filter avf_customize_heading_settings to change the html tag.",
+          "type": "input",
+          "default": "Milestone Title",
+          "lockable": true
+        },
+        {
+          "id": "content",
+          "name": "Milestone Content",
+          "description": "Enter some content here",
+          "type": "tiny_mce",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_toggle_container",
+      "name": "Accordion",
+      "tab": "Content Elements",
+      "tooltip": "Creates toggles or accordions (can be used for FAQ)",
+      "self_closing": false,
+      "file": "avia-shortcodes/toggles/toggles.php",
+      "parameters": [
+        {
+          "id": "initial",
+          "name": "Initial Open",
+          "description": "Enter the Number of the Accordion Item that should be open initially. Set to Zero if all should be close on page load",
+          "type": "input",
+          "default": "0",
+          "lockable": true
+        },
+        {
+          "id": "title",
+          "name": "Toggle Title",
+          "description": "Enter the toggle title here (better keep it short)",
+          "type": "input",
+          "default": "Toggle Title",
+          "lockable": true
+        },
+        {
+          "id": "title_open",
+          "name": "Open Toggle Title",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "content",
+          "name": "Toggle Content",
+          "description": "Enter some content here",
+          "type": "tiny_mce",
+          "lockable": true
+        },
+        {
+          "id": "tags",
+          "name": "Toggle Sorting Tags",
+          "description": "Enter any number of comma separated tags here. If sorting is active the user can filter the visible toggles with the help of these tags",
+          "type": "input",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "custom_id",
+          "name": "For Developers: Custom Toggle ID",
+          "description": "Insert a custom ID for the element here. Make sure to only use allowed characters (latin characters, underscores, dashes and numbers, no special characters can be used)",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "aria_collapsed",
+          "name": "Collapsed Aria-Label Text",
+          "description": "Enter a complete text to be used in aria-label attribute when the toggle is collapsed. Leave empty to use toggle title.",
+          "type": "input",
+          "default": ""
+        },
+        {
+          "id": "aria_expanded",
+          "name": "Expanded Aria-Label Text",
+          "description": "Enter a complete text to be used in aria-label attribute when the toggle is expanded. Leave empty to use toggle title.",
+          "type": "input",
+          "default": ""
+        }
+      ]
+    },
+    {
+      "shortcode": "av_upcoming_events",
+      "name": "Upcoming Events",
+      "tab": "Plugin Additions",
+      "tooltip": "Show a list of upcoming events",
+      "self_closing": true,
+      "file": "avia-shortcodes/events_upcoming/events_upcoming.php",
+      "parameters": [
+        {
+          "id": "categories",
+          "name": "Which Entries?",
+          "description": "Select which entries should be displayed by selecting a taxonomy. If none are selected all events are shown.",
+          "type": "select",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "av_video",
+      "name": "Video",
+      "tab": "Media Elements",
+      "tooltip": "Display a video",
+      "self_closing": true,
+      "file": "avia-shortcodes/video/video.php",
+      "parameters": [
+        {
+          "id": "video_thumbnails",
+          "name": "Save Video Thumbnail Locally",
+          "description": "Download the video preview thumbnail and save it in the media library",
+          "type": "action_button"
+        },
+        {
+          "id": "video_autoplay_enabled",
+          "name": "Enable Autoplay",
+          "description": "Check if you want to enable video autoplay when page is loaded. Videos will be muted by default.",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "video_mute",
+          "name": "Mute Video Player",
+          "description": "Check if you want to mute the video.",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "video_loop",
+          "name": "Loop Video Player",
+          "description": "Check if you want to loop the video and play it from the beginning again",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "video_controls",
+          "name": "Hide Video Controls",
+          "description": "Check if you want to hide the controls (works for youtube and self hosted videos)",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        },
+        {
+          "id": "html5_fullscreen",
+          "name": "Show Fullscreen Button (HTML5 videos)",
+          "description": "Check if you want to show the fullscreen button for HTML5 videos (setting is ignored for other type of videos)",
+          "type": "checkbox",
+          "default": "",
+          "lockable": true
+        }
+      ]
+    },
+    {
+      "shortcode": "avia_sc_search",
+      "name": "Search",
+      "tab": "Content Elements",
+      "tooltip": "Displays a search form",
+      "self_closing": true,
+      "file": "avia-shortcodes/search/search.php",
+      "parameters": [
+        {
+          "id": "placeholder",
+          "name": "Placeholder",
+          "description": "Enter a placeholder text for the input field",
+          "type": "input"
+        },
+        {
+          "id": "label_text",
+          "name": "Label Text",
+          "description": "Enter a label text for the button",
+          "type": "input"
+        },
+        {
+          "id": "radius",
+          "name": "Inputfield And Button Border Radius",
+          "description": "Set the border radius of the input field and the button",
+          "type": "template"
+        }
+      ]
+    }
+  ]
+}
