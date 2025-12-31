@@ -7,6 +7,7 @@ on:
       - staging
     paths:
       - 'content/**'
+      - 'theme/**'
   workflow_dispatch:
     inputs:
       deploy_all:
@@ -52,6 +53,17 @@ jobs:
           echo "files=$FILES" >> $GITHUB_OUTPUT
           echo "Changed files: $FILES"
       
+      - name: Check for theme changes
+        id: theme_changed
+        run: |
+          if [[ "${{ github.event.inputs.deploy_all }}" == "true" ]]; then
+            THEME_CHANGED="true"
+          else
+            THEME_CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'theme/' | grep -q '\.json' && echo "true" || echo "false")
+          fi
+          echo "changed=$THEME_CHANGED" >> $GITHUB_OUTPUT
+          echo "Theme changed: $THEME_CHANGED"
+      
       - name: Deploy changed content
         if: steps.changed.outputs.files != ''
         env:
@@ -82,6 +94,45 @@ jobs:
           echo "========================================"
           echo "All deployments completed successfully!"
       
+      - name: Deploy theme settings
+        if: steps.theme_changed.outputs.changed == 'true'
+        env:
+          WP_USERNAME: ${{ secrets.USERNAME }}
+          WP_APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
+        run: |
+          if [[ -f "theme/design-tokens.json" ]]; then
+            echo "----------------------------------------"
+            echo "Deploying theme settings..."
+            
+            # Generate Enfold settings from design tokens
+            python3 scripts/generate-theme-settings.py \
+              theme/design-tokens.json \
+              "${{ steps.env.outputs.url }}" \
+              /tmp/theme-settings.txt
+            
+            # Deploy theme settings via REST API
+            SETTINGS=$(cat /tmp/theme-settings.txt)
+            RESPONSE=$(curl -s -w "\n%{http_code}" \
+              -X POST "${{ steps.env.outputs.url }}/wp-json/enfold-gitops/v1/settings" \
+              -u "$WP_USERNAME:$WP_APP_PASSWORD" \
+              -H "Content-Type: application/json" \
+              -d "{\"settings\": \"$SETTINGS\"}")
+            
+            HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+            BODY=$(echo "$RESPONSE" | head -n -1)
+            
+            if [[ "$HTTP_CODE" -eq 200 ]]; then
+              echo "✅ Theme settings deployed successfully"
+              echo "Response: $BODY"
+            else
+              echo "❌ Theme deployment failed (HTTP $HTTP_CODE)"
+              echo "Response: $BODY"
+              exit 1
+            fi
+          else
+            echo "No theme/design-tokens.json found, skipping theme deployment"
+          fi
+      
       - name: No changes detected
-        if: steps.changed.outputs.files == ''
-        run: echo "No content files changed. Nothing to deploy."
+        if: steps.changed.outputs.files == '' && steps.theme_changed.outputs.changed == 'false'
+        run: echo "No content or theme files changed. Nothing to deploy."
