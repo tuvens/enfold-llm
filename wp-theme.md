@@ -41,7 +41,7 @@ Output:
 ========================================
 
 Brand:
-  Name: Forró Federation
+  Name: Your Site
   Tagline: Connecting forró communities worldwide
 
 Colors:
@@ -173,7 +173,7 @@ This is typically automatic when pushing changes, but can be triggered manually:
 # Generate settings
 python3 scripts/generate-theme-settings.py \
   theme/design-tokens.json \
-  https://staging2.forrofederation.com \
+  https://staging.example.com \
   /tmp/settings.txt
 
 # Deploy via API
@@ -193,7 +193,7 @@ Output:
    
    CSS regeneration triggered. Changes should be visible after cache clear.
    
-   Site: https://staging2.forrofederation.com
+   Site: https://staging.example.com
 ```
 
 ---

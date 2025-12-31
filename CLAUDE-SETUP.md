@@ -8,7 +8,7 @@ Organize this repository by pulling useful content from two reference repositori
 
 ## Source Repositories
 
-### 1. Forró Federation (`../Forro-Federation/`)
+### 1. Your Site (`../Forro-Federation/`)
 
 **IMPORTANT: Checkout the `staging` branch first** - it has the latest files.
 
@@ -105,8 +105,8 @@ When copying files, make these changes:
 ### URLs
 ```
 # Before (site-specific)
-https://forrofederation.com
-https://staging2.forrofederation.com
+https://example.com
+https://staging.example.com
 
 # After (variable-based)
 ${{ vars.PRODUCTION_URL }}
@@ -128,7 +128,7 @@ Replace FoFed brand colors with generic defaults:
 ```
 
 ### Documentation
-- Replace "Forró Federation" with "your site" or generic examples
+- Replace "Your Site" with "your site" or generic examples
 - Replace specific URLs with `https://example.com`
 - Keep the structure and instructions intact
 

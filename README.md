@@ -311,7 +311,7 @@ See [LICENSE](LICENSE) for the full license text.
 
 ## Credits
 
-- Created by [Forró Federation](https://forrofederation.com)
+- Created by [Your Site](https://example.com)
 - Built for [Claude](https://claude.ai) by Anthropic
 - Designed for [Enfold Theme](https://kriesi.at/themes/enfold/) by Kriesi
 

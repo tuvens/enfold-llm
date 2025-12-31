@@ -1,4 +1,4 @@
-# Enfold Theme Settings Analysis - Forró Federation
+# Enfold Theme Settings Analysis - Your Site
 
 ## File Structure Overview
 
@@ -115,9 +115,9 @@ Border:        #ebebeb (light border)
 
 | Asset | URL |
 |-------|-----|
-| Main Logo | `https://staging2.forrofederation.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px-500-x-100-px-1-300x86.png` |
-| Favicon | `https://staging2.forrofederation.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px.png` |
-| Preloader Logo | `https://staging2.forrofederation.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px-500-x-100-px-250-x-71-px.png` |
+| Main Logo | `https://staging.example.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px-500-x-100-px-1-300x86.png` |
+| Favicon | `https://staging.example.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px.png` |
+| Preloader Logo | `https://staging.example.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px-500-x-100-px-250-x-71-px.png` |
 
 ### ⚙️ Feature Settings
 
@@ -294,9 +294,9 @@ jobs:
         id: env
         run: |
           if [[ "${{ github.ref_name }}" == "staging" ]]; then
-            echo "url=https://staging2.forrofederation.com" >> $GITHUB_OUTPUT
+            echo "url=https://staging.example.com" >> $GITHUB_OUTPUT
           else
-            echo "url=https://forrofederation.com" >> $GITHUB_OUTPUT
+            echo "url=https://example.com" >> $GITHUB_OUTPUT
           fi
       
       - name: Deploy theme settings

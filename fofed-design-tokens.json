@@ -76,9 +76,9 @@
     ]
   },
   "assets": {
-    "logo": "https://staging2.forrofederation.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px-500-x-100-px-1-300x86.png",
-    "favicon": "https://staging2.forrofederation.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px.png",
-    "preloader_logo": "https://staging2.forrofederation.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px-500-x-100-px-250-x-71-px.png"
+    "logo": "https://staging.example.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px-500-x-100-px-1-300x86.png",
+    "favicon": "https://staging.example.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px.png",
+    "preloader_logo": "https://staging.example.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px-500-x-100-px-250-x-71-px.png"
   },
   "features": {
     "page_preloading": true,
