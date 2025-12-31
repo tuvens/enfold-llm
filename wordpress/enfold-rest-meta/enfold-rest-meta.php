@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: Enfold REST API Meta Support
- * Plugin URI: https://github.com/tuvens/forrofederation.com
+ * Plugin URI: https://github.com/tuvens/enfold-llm
  * Description: Exposes Enfold builder meta fields and theme settings to REST API for GitOps deployment
  * Version: 2.2.0
- * Author: Your Site
+ * Author: Enfold LLM Contributors
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -296,7 +296,7 @@ add_action('admin_notices', function() {
             <p>
                 <strong>Enfold REST API Meta Support:</strong> 
                 GitOps deployment active. Theme settings and page content can be managed via the REST API.
-                <a href="https://github.com/tuvens/forrofederation.com" target="_blank">View documentation</a>
+                <a href="https://github.com/tuvens/enfold-llm" target="_blank">View documentation</a>
             </p>
         </div>
         <?php

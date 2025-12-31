@@ -15,7 +15,7 @@ Edit content/*.txt → git push → GitHub Actions → WordPress REST API
                      │                                 │
               staging branch                    main branch
                      ↓                                 ↓
-        staging2.forrofederation.com         forrofederation.com
+        staging.example.com                  example.com
 ```
 
 ## File Structure
@@ -60,7 +60,7 @@ git add content/events.txt
 git commit -m "Test: Update events page"
 git push origin staging
 
-# After verifying on staging2.forrofederation.com, merge to main
+# After verifying on staging.example.com, merge to main
 git checkout main
 git merge staging
 git push origin main
