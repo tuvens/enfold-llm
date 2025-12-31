@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "site": "Forr\u00f3 Federation",
+    "theme": "Enfold",
+    "export_date": "2025-12-31",
+    "total_settings": 447
+  },
+  "colors": {
+    "brand": {
+      "primary": "#409265",
+      "secondary": "#0a364d",
+      "accent": "#179162"
+    },
+    "header": {
+      "bg": "#ffffff",
+      "bg2": "#f8f8f8",
+      "primary": "#0a364d",
+      "secondary": "#179162",
+      "color": "#179162",
+      "meta": "#0a364d",
+      "heading": "#0a364d",
+      "border": "#ebebeb"
+    },
+    "main": {
+      "bg": "#ffffff",
+      "bg2": "#f8f8f8",
+      "primary": "#409265",
+      "secondary": "#0a364d",
+      "color": "#000000",
+      "meta": "#0a364d",
+      "heading": "#0a364d",
+      "border": "#ebebeb"
+    },
+    "alternate": {
+      "bg": "#0a364d",
+      "bg2": "#0a364d",
+      "primary": "#ffffff",
+      "secondary": "#ffffff",
+      "color": "#ffffff",
+      "meta": "#ebebeb",
+      "heading": "#ffffff",
+      "border": "#ebebeb"
+    },
+    "footer": {
+      "bg": "#0a364d",
+      "bg2": "#f8f8f8",
+      "primary": "#409265",
+      "secondary": "#ffffff",
+      "color": "#ffffff",
+      "meta": "#969696",
+      "heading": "#ffffff",
+      "border": "#ebebeb"
+    },
+    "socket": {
+      "bg": "#ffffff",
+      "bg2": "#f8f8f8",
+      "primary": "#409265",
+      "secondary": "#409265",
+      "color": "#0a364d",
+      "meta": "#969696",
+      "heading": "#000000",
+      "border": "#ebebeb"
+    },
+    "misc": {
+      "color-body_color": "#eeeeee",
+      "shop_banner_overlay_color": "#000000",
+      "shop_banner_message_color": "#ffffff"
+    }
+  },
+  "typography": {
+    "heading_font": "Comfortaa:300,400,700",
+    "body_font": "now-alt-cufonfonts-webfont-custom",
+    "custom_fonts": [
+      "aristotelica (400)",
+      "now alt cufonfonts webfont (100, 300, 400, 500, 700, 900)"
+    ]
+  },
+  "assets": {
+    "logo": "https://staging2.forrofederation.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px-500-x-100-px-1-300x86.png",
+    "favicon": "https://staging2.forrofederation.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px.png",
+    "preloader_logo": "https://staging2.forrofederation.com/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px-500-x-100-px-250-x-71-px.png"
+  },
+  "features": {
+    "page_preloading": true,
+    "page_transitions": true,
+    "lightbox": true
+  }
+}

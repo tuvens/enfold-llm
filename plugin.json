@@ -1,0 +1,156 @@
+{
+  "name": "wordpress-gitops",
+  "version": "1.1.0",
+  "description": "GitOps workflow for WordPress/Enfold sites - manage pages, posts, and theme settings via Git with automatic deployment through GitHub Actions",
+  "author": "Forró Federation",
+  "repository": "https://github.com/tuvens/claude-wordpress-gitops",
+  "license": "MIT",
+  
+  "commands": [
+    {
+      "name": "wp-create-page",
+      "description": "Create a new WordPress page with Enfold shortcodes",
+      "file": "commands/wp-create-page.md"
+    },
+    {
+      "name": "wp-update-page",
+      "description": "Update an existing WordPress page",
+      "file": "commands/wp-update-page.md"
+    },
+    {
+      "name": "wp-pull-page",
+      "description": "Pull an existing page from WordPress into the repo",
+      "file": "commands/wp-pull-page.md"
+    },
+    {
+      "name": "wp-setup",
+      "description": "Initialize GitOps workflow in current repository",
+      "file": "commands/wp-setup.md"
+    },
+    {
+      "name": "wp-status",
+      "description": "Check deployment status and workflow health",
+      "file": "commands/wp-status.md"
+    },
+    {
+      "name": "wp-theme",
+      "description": "Manage theme settings and design tokens",
+      "file": "commands/wp-theme.md"
+    }
+  ],
+  
+  "context": [
+    {
+      "file": "context/workflow-rules.md",
+      "description": "Critical rules for GitOps workflow - auto-loaded"
+    },
+    {
+      "file": "context/enfold-shortcodes.md",
+      "description": "Enfold shortcode reference"
+    },
+    {
+      "file": "context/theme-customization.md",
+      "description": "Design tokens and brand colors guide"
+    }
+  ],
+  
+  "configuration": {
+    "file": ".claude-wp.json",
+    "description": "Site-specific configuration stored in repo root",
+    "schema": {
+      "wordpress_url": {
+        "type": "string",
+        "description": "Production WordPress URL",
+        "required": true,
+        "example": "https://example.com"
+      },
+      "staging_url": {
+        "type": "string",
+        "description": "Staging WordPress URL",
+        "required": false,
+        "example": "https://staging.example.com"
+      },
+      "theme": {
+        "type": "string",
+        "enum": ["enfold"],
+        "default": "enfold",
+        "description": "WordPress theme (currently only Enfold supported)"
+      },
+      "content_types": {
+        "type": "array",
+        "items": ["pages", "posts", "portfolio", "layouts"],
+        "default": ["pages"],
+        "description": "Content types to manage via GitOps"
+      },
+      "default_branch": {
+        "type": "string",
+        "default": "main",
+        "description": "Branch that deploys to production"
+      },
+      "staging_branch": {
+        "type": "string",
+        "default": "staging",
+        "description": "Branch that deploys to staging"
+      },
+      "theme_settings": {
+        "type": "object",
+        "description": "Theme settings configuration",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enable design tokens deployment"
+          },
+          "tokens_file": {
+            "type": "string",
+            "default": "theme/design-tokens.json",
+            "description": "Path to design tokens file"
+          }
+        }
+      }
+    }
+  },
+  
+  "templates": {
+    "description": "Template files for /wp-setup command",
+    "files": {
+      "workflow": "templates/deploy.yml",
+      "design_tokens": "templates/design-tokens.json",
+      "page_template": "templates/page-template.txt",
+      "scripts": {
+        "create": "templates/scripts/create-wordpress-resource.sh",
+        "deploy": "templates/scripts/deploy-content.sh",
+        "pull": "templates/scripts/pull-content.sh",
+        "validate": "templates/scripts/validate-content.sh",
+        "list": "templates/scripts/list-content.sh",
+        "theme": "templates/scripts/generate-theme-settings.py"
+      },
+      "wordpress_plugin": "templates/wordpress/enfold-rest-meta/"
+    }
+  },
+  
+  "requirements": {
+    "wordpress": {
+      "version": "5.0+",
+      "plugins": ["enfold-rest-meta"],
+      "theme": "Enfold"
+    },
+    "github": {
+      "secrets": ["USERNAME", "APP_PASSWORD"],
+      "variables": ["PRODUCTION_URL", "STAGING_URL"]
+    },
+    "local": {
+      "tools": ["git", "jq", "curl"],
+      "optional": ["python3", "gh"]
+    }
+  },
+  
+  "keywords": [
+    "wordpress",
+    "enfold",
+    "gitops",
+    "deployment",
+    "cms",
+    "content-management"
+  ]
+}
