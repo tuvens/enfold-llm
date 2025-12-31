@@ -12,22 +12,25 @@ git submodule add https://github.com/tuvens/enfold-llm.git .claude/plugins/enfol
 ```
 
 ### 2. Install WordPress plugin
-Upload `wordpress/enfold-rest-meta/` to your WordPress site and activate.
+Upload `wordpress/enfold-rest-meta/` folder as a zip to your WordPress site and activate.
 
 ### 3. Configure GitHub secrets
 In your repo → Settings → Secrets:
-- `WP_USERNAME` - WordPress username
-- `WP_APP_PASSWORD` - Application password from WordPress
+- `USERNAME` - WordPress username
+- `APP_PASSWORD` - Application password from WordPress
 
 ### 4. Configure GitHub variables
 In your repo → Settings → Variables:
 - `PRODUCTION_URL` - https://yoursite.com
 - `STAGING_URL` - https://staging.yoursite.com
 
-### 5. Initialize project
+### 5. Configure your site
+Create `.claude-wp.json` in your repository root with your site details.
+
+### 6. Initialize project
 Run `/wp-setup` in Claude Code, then `/wp-status` to verify.
 
-### 6. Create your first page
+### 7. Create your first page
 Run `/wp-create-page` and follow the prompts.
 
 For detailed instructions, see [docs/INSTALLATION.md](docs/INSTALLATION.md).
@@ -354,3 +357,4 @@ See [LICENSE](LICENSE) for the full license text.
 ---
 
 *This project is not affiliated with or endorsed by Anthropic, Kriesi, or WordPress. Enfold is a trademark of Kriesi.*
+
