@@ -45,7 +45,7 @@ jobs:
       - name: Get changed content files
         id: changed
         run: |
-          if [[ "${{ github.event.inputs.deploy_all }}" == "true" ]]; then
+          if [[ "${{ github.event.inputs.deploy_all }}" == "true" || "${{ github.event.before }}" == "0000000000000000000000000000000000000000" ]]; then
             FILES=$(find content -name "*.txt" -type f | tr '\n' ' ')
           else
             FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} -- 'content/' | grep '\.txt' | tr '\n' ' ' || echo "")
@@ -56,7 +56,7 @@ jobs:
       - name: Check for theme changes
         id: theme_changed
         run: |
-          if [[ "${{ github.event.inputs.deploy_all }}" == "true" ]]; then
+          if [[ "${{ github.event.inputs.deploy_all }}" == "true" || "${{ github.event.before }}" == "0000000000000000000000000000000000000000" ]]; then
             THEME_CHANGED="true"
           else
             THEME_CHANGED=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} -- 'theme/' | grep -q '\.json' && echo "true" || echo "false")
