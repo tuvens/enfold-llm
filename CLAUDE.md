@@ -72,6 +72,45 @@ Commit types: `feat`, `fix`, `chore`, `docs`, `refactor`
 ### 6. Report Back
 Provide the PR URL when complete.
 
+## Handling Automated Code Reviews
+
+PRs may receive automated reviews from Gemini Code Assist or other tools. **Address all comments before merging.**
+
+### Check for Reviews
+```bash
+# View PR with review summary
+gh pr view <number>
+
+# Get review comments
+gh api repos/tuvens/enfold-llm/pulls/<number>/comments --jq '.[].body'
+
+# Get review summaries
+gh api repos/tuvens/enfold-llm/pulls/<number>/reviews --jq '.[] | "\(.user.login): \(.state)"'
+```
+
+### Response Options
+
+| Action | When to Use |
+|--------|-------------|
+| **Implement** | Valid issue - fix before merging |
+| **Defer** | Valid but out of scope - create follow-up issue |
+| **Decline** | Incorrect or N/A - explain reasoning |
+
+### Before Merging
+
+1. Run review check commands above
+2. For each comment: implement, defer (with issue #), or decline (with reason)
+3. Add PR comment documenting decisions:
+   ```
+   Gemini review addressed:
+   - ✅ Fixed [issue]
+   - 📋 Deferred [issue] to #XX
+   - ❌ Declined [suggestion] because [reason]
+   ```
+4. Then merge
+
+**Never merge a PR with unaddressed review comments.**
+
 ## How It Works
 
 ```
