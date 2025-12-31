@@ -1,0 +1,87 @@
+name: Deploy to WordPress
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+    paths:
+      - 'content/**'
+  workflow_dispatch:
+    inputs:
+      deploy_all:
+        description: 'Deploy all pages (not just changed)'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      
+      - name: Install jq
+        run: sudo apt-get install -y jq
+      
+      - name: Determine environment
+        id: env
+        run: |
+          if [[ "${{ github.ref_name }}" == "staging" ]]; then
+            echo "url=${{ vars.STAGING_URL }}" >> $GITHUB_OUTPUT
+            echo "env_name=STAGING" >> $GITHUB_OUTPUT
+            echo "Deploying to STAGING"
+          else
+            echo "url=${{ vars.PRODUCTION_URL }}" >> $GITHUB_OUTPUT
+            echo "env_name=PRODUCTION" >> $GITHUB_OUTPUT
+            echo "Deploying to PRODUCTION"
+          fi
+      
+      - name: Get changed content files
+        id: changed
+        run: |
+          if [[ "${{ github.event.inputs.deploy_all }}" == "true" ]]; then
+            FILES=$(find content -name "*.txt" -type f | tr '\n' ' ')
+          else
+            FILES=$(git diff --name-only HEAD~1 HEAD -- 'content/' | grep '\.txt' | tr '\n' ' ' || echo "")
+          fi
+          echo "files=$FILES" >> $GITHUB_OUTPUT
+          echo "Changed files: $FILES"
+      
+      - name: Deploy changed content
+        if: steps.changed.outputs.files != ''
+        env:
+          WP_USERNAME: ${{ secrets.USERNAME }}
+          WP_APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
+        run: |
+          chmod +x scripts/deploy-content.sh
+          
+          echo "Deploying to ${{ steps.env.outputs.env_name }} (${{ steps.env.outputs.url }})"
+          echo "========================================"
+          
+          FAILED=0
+          for file in ${{ steps.changed.outputs.files }}; do
+            if [[ -f "$file" ]]; then
+              echo "----------------------------------------"
+              echo "Processing: $file"
+              if ! ./scripts/deploy-content.sh "$file" "${{ steps.env.outputs.url }}" "$WP_USERNAME" "$WP_APP_PASSWORD"; then
+                FAILED=1
+              fi
+            fi
+          done
+          
+          if [[ $FAILED -eq 1 ]]; then
+            echo "Some deployments failed!"
+            exit 1
+          fi
+          
+          echo "========================================"
+          echo "All deployments completed successfully!"
+      
+      - name: No changes detected
+        if: steps.changed.outputs.files == ''
+        run: echo "No content files changed. Nothing to deploy."

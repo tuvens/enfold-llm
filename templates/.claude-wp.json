@@ -1,0 +1,16 @@
+{
+  "site": {
+    "name": "Your Site Name",
+    "production_url": "https://example.com",
+    "staging_url": "https://staging.example.com"
+  },
+  "wordpress": {
+    "username": "",
+    "application_password": ""
+  },
+  "paths": {
+    "content": "content/",
+    "meta": "meta/",
+    "theme": "theme/"
+  }
+}
