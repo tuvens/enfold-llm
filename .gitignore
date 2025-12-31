@@ -54,6 +54,9 @@ wp-content/blogs.dir/
 wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
 
+# Git worktrees
+Worktrees/
+
 # Sensitive data
 *.pem
 *.key
