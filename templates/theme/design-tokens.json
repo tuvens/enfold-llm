@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "description": "Enfold theme design tokens. Edit this file to customize site appearance.",
+    "generator": "scripts/generate-theme-settings.py",
+    "docs": "claude/theme-customization.md"
+  },
+  "brand": {
+    "name": "Your Site Name",
+    "tagline": "Your site tagline"
+  },
+  "colors": {
+    "primary": "#3b82f6",
+    "secondary": "#1e293b",
+    "accent": "#10b981",
+    "background": "#ffffff",
+    "background_alt": "#f8f8f8",
+    "text": "#000000",
+    "text_muted": "#969696",
+    "border": "#ebebeb"
+  },
+  "typography": {
+    "heading_font": "Comfortaa:300,400,700",
+    "body_font": "now-alt-cufonfonts-webfont-custom",
+    "_note": "Use Google Font format (e.g., 'Roboto:400,700') or 'fontname-custom' for uploaded fonts"
+  },
+  "assets": {
+    "logo": "/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px-500-x-100-px-1-300x86.png",
+    "favicon": "/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px.png",
+    "preloader_logo": "/wp-content/uploads/2024/05/Untitled-300-x-300-px-100-x-100-px-500-x-100-px-250-x-71-px.png",
+    "_note": "Relative paths from site root, or full URLs. Relative paths auto-resolve per environment."
+  },
+  "features": {
+    "page_preloading": true,
+    "page_transitions": true,
+    "lightbox": true
+  }
+}
