@@ -50,7 +50,7 @@ git commit -m "chore: Update enfold-llm plugin"
 git clone https://github.com/tuvens/enfold-llm.git /tmp/enfold-llm
 
 # Copy necessary files to your project
-cp -r /tmp/enfold-llm/templates/* .
+cp -r /tmp/enfold-llm/templates/. .
 cp -r /tmp/enfold-llm/commands .claude/
 cp -r /tmp/enfold-llm/context .claude/
 cp /tmp/enfold-llm/plugin.json .claude/
@@ -109,8 +109,8 @@ In your GitHub repository:
 
 1. Go to **Settings → Secrets and variables → Actions**
 2. Add these secrets:
-   - `WP_USERNAME`: Your WordPress username
-   - `WP_APP_PASSWORD`: The application password you created
+   - `USERNAME`: Your WordPress username
+   - `APP_PASSWORD`: The application password you created
 
 ### 2. Add Repository Variables
 
@@ -140,14 +140,24 @@ This will:
 
 ### 2. Configure Project Settings
 
-Create `.claude-wp.json` in your project root:
+Create `.claude-wp.json` in your project root. The structure should match the project's configuration template to ensure compatibility with other scripts.
 
 ```json
 {
-  "site_url": "https://your-site.com",
-  "staging_url": "https://staging.your-site.com",
-  "default_branch": "main",
-  "staging_branch": "staging"
+  "site": {
+    "name": "Your Site Name",
+    "production_url": "https://your-site.com",
+    "staging_url": "https://staging.your-site.com"
+  },
+  "wordpress": {
+    "username": "",
+    "application_password": ""
+  },
+  "paths": {
+    "content": "content/",
+    "meta": "meta/",
+    "theme": "theme/"
+  }
 }
 ```
 
@@ -207,7 +217,7 @@ Visit `https://staging.your-site.com/gitops-test` to see your deployed page.
 
 **Problem:** The workflow fails with authentication error
 **Solution:** 
-- Verify `WP_USERNAME` and `WP_APP_PASSWORD` secrets are set correctly
+- Verify `USERNAME` and `APP_PASSWORD` secrets are set correctly
 - Ensure application password doesn't contain spaces
 - Check WordPress user has appropriate permissions
 
