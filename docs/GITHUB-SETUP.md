@@ -108,6 +108,29 @@ GitHub Actions needs proper permissions to run.
 
 ### Configure Permissions
 
+For enhanced security, it's best practice to grant permissions to workflows on a case-by-case basis.
+
+#### Recommended: Per-Workflow Permissions
+
+The most secure approach is to define permissions inside your workflow file. This ensures a workflow can only perform its intended actions and allows you to keep the repository's default workflow permissions more restrictive.
+
+1. Open your workflow file (e.g., `.github/workflows/deploy.yml`).
+2. Add a `permissions` block to the job that needs to write back to the repository.
+
+```yaml
+jobs:
+  deploy:
+    # ...
+    permissions:
+      contents: write # Required to commit meta files back to the repo
+    steps:
+      # ...
+```
+
+#### Alternative: Repository-Level Permissions
+
+If you prefer a simpler setup, you can grant write permissions to all workflows in the repository. **Note:** This is less secure as it gives more access than may be needed.
+
 1. Go to **Settings** → **Actions** → **General**
 2. Scroll to **Workflow permissions**
 3. Select: **Read and write permissions**
@@ -117,7 +140,7 @@ GitHub Actions needs proper permissions to run.
 ### Understanding Permissions
 
 - **Read**: Allows workflows to check out code
-- **Write**: Allows workflows to update deployment status
+- **Write**: Allows workflows to update deployment status and commit meta files
 - **GITHUB_TOKEN**: Automatically provided token with these permissions
 
 ## Environment Setup (Optional)
@@ -199,10 +222,22 @@ jobs:
 
 **Cause**: Insufficient workflow permissions
 
-**Solution**: 
-1. Go to **Settings** → **Actions** → **General**
-2. Set **Workflow permissions** to "Read and write permissions"
-3. Save and re-run workflow
+**Solution**:
+
+This error indicates the workflow needs permission to write to the repository. The most secure solution is to grant this permission only for the specific job that requires it.
+
+1. Open your `.github/workflows/deploy.yml` file.
+2. Add `permissions: { contents: write }` to the relevant job:
+   ```yaml
+   jobs:
+     your-job-name:
+       permissions:
+         contents: write
+       # ... rest of job
+   ```
+3. Save the file and re-run the workflow.
+
+**Alternative**: You can enable write permissions for all workflows in **Settings** → **Actions** → **General**, but this is less secure.
 
 #### "Secret WP_USERNAME not found"
 
@@ -242,7 +277,12 @@ jobs:
 1. Ensure Enfold REST Meta plugin is active
 2. Check `.htaccess` for REST API blocks
 3. Verify user has `edit_pages` capability
-4. Test REST API manually with curl
+4. Test REST API manually with `curl` to verify credentials and API accessibility. A successful request should return a `200 OK` status and JSON data.
+
+   ```bash
+   # Replace with your credentials and URL
+   curl -i -u "YOUR_WP_USERNAME:YOUR_WP_APP_PASSWORD" https://your-site.com/wp-json/wp/v2/pages
+   ```
 
 ### Getting Help
 
