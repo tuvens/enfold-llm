@@ -1,0 +1,61 @@
+# Dependencies
+node_modules/
+vendor/
+__pycache__/
+*.pyc
+
+# Environment and local config
+.env
+.env.local
+.claude-wp.local.json
+*.local.json
+
+# IDE and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+.cache/
+
+# Build artifacts
+dist/
+build/
+*.zip
+
+# Test coverage
+coverage/
+.coverage
+htmlcov/
+
+# OS generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# WordPress specific (if testing locally)
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+
+# Sensitive data
+*.pem
+*.key
+credentials.json
+secrets.json
