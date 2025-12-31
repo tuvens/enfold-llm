@@ -176,23 +176,23 @@ APP_PASSWORD="your-app-password"
 SITE_URL="https://yoursite.com"
 
 # Test 1: Basic REST API access
-curl -u "$USERNAME:$APP_PASSWORD" \
+curl -L -u "$USERNAME:$APP_PASSWORD" \
   "$SITE_URL/wp-json/wp/v2/users/me"
 
 # Test 2: Posts endpoint
-curl -u "$USERNAME:$APP_PASSWORD" \
+curl -L -u "$USERNAME:$APP_PASSWORD" \
   "$SITE_URL/wp-json/wp/v2/posts?per_page=1"
 
 # Test 3: Pages endpoint
-curl -u "$USERNAME:$APP_PASSWORD" \
+curl -L -u "$USERNAME:$APP_PASSWORD" \
   "$SITE_URL/wp-json/wp/v2/pages?per_page=1"
 
 # Test 4: Enfold GitOps status
-curl -u "$USERNAME:$APP_PASSWORD" \
+curl -L -u "$USERNAME:$APP_PASSWORD" \
   "$SITE_URL/wp-json/enfold-gitops/v1/status"
 
 # Test 5: Theme settings access
-curl -u "$USERNAME:$APP_PASSWORD" \
+curl -L -u "$USERNAME:$APP_PASSWORD" \
   "$SITE_URL/wp-json/enfold-gitops/v1/theme-settings"
 ```
 
@@ -215,7 +215,7 @@ curl -u "$USERNAME:$APP_PASSWORD" \
 3. Ensure Application Passwords are enabled
 4. Try with Basic Auth header:
    ```bash
-   curl -H "Authorization: Basic $(echo -n $USERNAME:$APP_PASSWORD | base64)" \
+   curl -L -H "Authorization: Basic $(echo -n $USERNAME:$APP_PASSWORD | base64)" \
      "$SITE_URL/wp-json/wp/v2/users/me"
    ```
 
@@ -251,7 +251,7 @@ curl -u "$USERNAME:$APP_PASSWORD" \
 1. Ensure site URL uses HTTPS in WordPress settings
 2. For local development, use:
    ```bash
-   curl -k -u "$USERNAME:$APP_PASSWORD" \
+   curl -kL -u "$USERNAME:$APP_PASSWORD" \
      "$SITE_URL/wp-json/wp/v2/posts"
    ```
 3. Update certificates if expired
