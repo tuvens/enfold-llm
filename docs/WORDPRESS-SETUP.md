@@ -56,8 +56,8 @@ The Enfold REST Meta plugin extends the WordPress REST API to support Enfold the
 1. Download the plugin from your repository:
    ```bash
    # From your local enfold-llm repository
-   cd wordpress/enfold-rest-meta/
-   zip -r enfold-rest-meta.zip .
+   cd wordpress/
+   zip -r enfold-rest-meta.zip enfold-rest-meta
    ```
 
 2. In WordPress admin:
