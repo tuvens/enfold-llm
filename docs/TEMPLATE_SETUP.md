@@ -75,7 +75,7 @@ If you have a template repository set up:
 
 1. **Fork This Repository**
    - Fork `tuvens/enfold-llm` to your organization
-   - Run `/wp-setup` to initialize 
+   - Run `/wp-setup` to initialize
    - Customize `theme/design-tokens.json` with your branding
    - Add any standard content in `content/`
 
