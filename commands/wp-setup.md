@@ -2,6 +2,8 @@
 
 **Interactive Setup Wizard** - Initialize a new WordPress/Enfold GitOps project with guided configuration.
 
+> **Tip:** Starting fresh? Use the [vibing-enfold](https://github.com/tuvens/vibing-enfold) template instead - it includes everything pre-configured.
+
 ## What This Command Does
 
 This wizard will:

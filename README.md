@@ -4,23 +4,27 @@ GitOps workflow for managing WordPress/Enfold websites through LLM assistants li
 
 Create, update, and deploy WordPress pages, posts, portfolio items, and theme settings directly from your AI coding assistant—with full version control and automatic deployment via GitHub Actions.
 
-## Quick Start (60 seconds)
+## Quick Start
 
-### 1. Add plugin as submodule
+The easiest way to use enfold-llm is with the [vibing-enfold](https://github.com/tuvens/vibing-enfold) template:
+
+1. Click **"Use this template"** on [vibing-enfold](https://github.com/tuvens/vibing-enfold)
+2. Clone with `git clone --recurse-submodules`
+3. Open in Claude Code and run `/wp-setup`
+
+The template includes all required scripts, workflows, and the WordPress plugin.
+
+---
+
+### Alternative: Add to Existing Repository
+
+If you have an existing repository, add the plugin as a submodule:
+
 ```bash
 git submodule add https://github.com/tuvens/enfold-llm.git .claude/plugins/enfold-llm
 ```
 
-### 2. Open Claude Code
-Claude will detect the plugin automatically.
-
-### 3. Run setup wizard
-```bash
-/wp-setup
-```
-
-### 4. Follow prompts
-The wizard will guide you through configuration and provide next steps for GitHub and WordPress setup.
+Then open Claude Code and run `/wp-setup` to initialize the project.
 
 For detailed instructions, see [docs/INSTALLATION.md](docs/INSTALLATION.md).
 
@@ -122,19 +126,16 @@ The **Enfold REST API Meta Support** plugin must be installed on your WordPress 
 
 ### Step 1: Create Your Repository
 
-**Option A: Use as a template**
-```bash
-# Clone this repository as a starting point
-git clone https://github.com/tuvens/enfold-llm.git my-wordpress-site
-cd my-wordpress-site
-rm -rf .git
-git init
-```
+**Option A: Use the vibing-enfold template (Recommended)**
 
-**Option B: Copy templates to existing repo**
+1. Go to [github.com/tuvens/vibing-enfold](https://github.com/tuvens/vibing-enfold)
+2. Click **"Use this template"** → **"Create a new repository"**
+3. Clone your new repo: `git clone --recurse-submodules https://github.com/YOUR-USERNAME/YOUR-REPO.git`
+
+**Option B: Add to existing repo as submodule**
 ```bash
-# Copy just the templates you need
-cp -r enfold-llm/templates/* your-existing-repo/
+git submodule add https://github.com/tuvens/enfold-llm.git .claude/plugins/enfold-llm
+git submodule update --init --recursive
 ```
 
 ### Step 2: Configure GitHub Secrets

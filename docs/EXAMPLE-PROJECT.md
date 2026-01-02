@@ -1,5 +1,11 @@
 # Example Project Structure
 
+See [vibing-enfold](https://github.com/tuvens/vibing-enfold) for a complete working template.
+
+For a real-world implementation, see [forrofederation.com](https://github.com/tuvens/forrofederation.com).
+
+---
+
 After running `/wp-setup`, your WordPress project should look like this:
 
 ```
