@@ -103,7 +103,7 @@ If you have a template repository set up:
 ## Recommendations
 
 - **Single site:** Use template or fork
-- **Multiple sites:** Create organization template  
+- **Multiple sites:** Create organization template
 - **Plugin development:** Fork and contribute back
 - **Existing project:** Add as submodule
 
