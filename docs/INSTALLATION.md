@@ -2,6 +2,29 @@
 
 This guide will help you integrate the Enfold LLM GitOps plugin into your existing WordPress/Enfold project.
 
+## Recommended: Use the Template
+
+The easiest way to get started is the [vibing-enfold](https://github.com/tuvens/vibing-enfold) template repository:
+
+1. Go to [github.com/tuvens/vibing-enfold](https://github.com/tuvens/vibing-enfold)
+2. Click **"Use this template"** → **"Create a new repository"**
+3. Clone your new repo: `git clone --recurse-submodules https://github.com/YOUR-USERNAME/YOUR-REPO.git`
+4. Open in Claude Code and run `/wp-setup`
+
+The template includes:
+- enfold-llm plugin (as submodule)
+- GitHub Actions deployment workflow
+- All deployment scripts
+- WordPress plugin (enfold-rest-meta)
+- Dependabot for automatic updates
+- Ready-to-use directory structure
+
+---
+
+## Alternative: Add to Existing Repository
+
+If you have an existing repository, you can add enfold-llm as a submodule using one of the methods below.
+
 ## Prerequisites
 
 Before starting, ensure you have:
@@ -16,7 +39,7 @@ Before starting, ensure you have:
 
 Choose one of the following methods based on your needs:
 
-### Method A: Git Submodule (Recommended)
+### Method A: Git Submodule
 
 **Best for:** Projects that want to receive updates to the plugin
 

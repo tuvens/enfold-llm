@@ -1,5 +1,11 @@
 # Example Project Structure
 
+See [vibing-enfold](https://github.com/tuvens/vibing-enfold) for a complete working template.
+
+For a real-world implementation, see [forrofederation.com](https://github.com/tuvens/forrofederation.com).
+
+---
+
 After running `/wp-setup`, your WordPress project should look like this:
 
 ```
@@ -53,14 +59,24 @@ my-wordpress-site/
 
 ```json
 {
-  "wordpress_url": "https://mysite.com",
-  "staging_url": "https://staging.mysite.com",
-  "content_types": ["pages", "posts"],
-  "theme": {
-    "design_tokens": "theme/design-tokens.json"
+  "site": {
+    "name": "My Site Name",
+    "production_url": "https://mysite.com",
+    "staging_url": "https://staging.mysite.com"
+  },
+  "wordpress": {
+    "username": "",
+    "application_password": ""
+  },
+  "paths": {
+    "content": "content/",
+    "meta": "meta/",
+    "theme": "theme/"
   }
 }
 ```
+
+**Note:** The `wordpress` section is for local development scripts only. Never commit credentials.
 
 ## Example Content File (`content/pages/about.txt`)
 
