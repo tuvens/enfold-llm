@@ -38,6 +38,16 @@ status: publish
 [/av_section]
 ```
 
+## Reference Documentation
+
+For complex layouts or unfamiliar shortcodes, consult the full schema:
+
+- **Full Schema:** `context/enfold-knowledge/enfold-schema.json` - Complete parameter reference for all shortcodes
+- **Best Practices:** `context/enfold-knowledge/enfold-guidance.md` - Patterns and recommendations
+- **Quick Reference:** `context/claude/enfold-shortcodes.md` - Common shortcodes (auto-loaded)
+
+When creating pages with advanced elements (tabs, accordions, maps, sliders), read the relevant section from `context/enfold-knowledge/enfold-schema.json` first.
+
 ## Notes
 
 - The page will be auto-created in WordPress when pushed
