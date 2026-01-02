@@ -1,5 +1,7 @@
 # Enfold Shortcode Reference
 
+> **Note:** This is a quick reference. For complete parameter documentation, see `context/enfold-knowledge/enfold-schema.json`.
+
 This guide covers the Enfold theme shortcodes used on the Your Site website.
 
 ## Basic Structure

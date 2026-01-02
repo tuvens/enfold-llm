@@ -1,53 +1,102 @@
 # /wp-setup - Initialize WordPress/Enfold GitOps repository
 
-Set up a new project with the Enfold LLM plugin structure. This command will:
-1. Copy template files to create project structure
-2. Install WordPress plugin
-3. Configure GitHub repository settings
-4. Set up deployment workflow
+**Interactive Setup Wizard** - Initialize a new WordPress/Enfold GitOps project with guided configuration.
 
-## Usage
+## What This Command Does
 
-Use this command when starting a new WordPress/Enfold GitOps project.
+This wizard will:
+1. **Ask for your site details** (URLs, name, description)
+2. **Copy all template files** to your project root
+3. **Create directory structure** with proper organization
+4. **Generate configuration file** (`.claude-wp.json`)
+5. **Provide manual setup instructions** for GitHub and WordPress
 
-## Process
+## Before You Start
 
-You should:
-1. Copy template files from `templates/` to project root:
-   - `.github/workflows/deploy.yml`
-   - `scripts/` directory
-   - `theme/design-tokens.json`
-   - `claude/` documentation
-2. Create empty directories with `.gitkeep` files:
-   - `content/pages/`
-   - `content/posts/`
-   - `content/portfolio/`
-   - `content/layouts/`
-   - `meta/pages/`
-   - `meta/posts/`
-   - `meta/portfolio/`
-   - `meta/layouts/`
-3. Install WordPress plugin: copy `wordpress/enfold-rest-meta/` to `wp-content/plugins/`
-4. Configure GitHub repository:
-   - Set Secrets: `USERNAME`, `APP_PASSWORD`
-   - Set Variables: `PRODUCTION_URL`, `STAGING_URL`
+Make sure you have:
+- WordPress site with Enfold theme installed
+- GitHub repository with Actions enabled
+- WordPress Application Password ready
 
-## Required Configuration
+## Setup Process
 
-### GitHub Secrets
-- `USERNAME` - WordPress username with editor permissions
+### Step 1: Project Information
+Ask the user for:
+- **Production URL** (e.g., https://yoursite.com)
+- **Staging URL** (optional, e.g., https://staging.yoursite.com)
+- **Site Name** (for documentation)
+- **Site Description** (optional, for context)
+
+### Step 2: Automatic File Setup
+Copy these template files to project root:
+- `.github/workflows/deploy.yml` - GitHub Actions workflow
+- `scripts/` directory - Deployment and management scripts
+- `theme/design-tokens.json` - Theme customization file
+- `claude/` directory - Documentation and guides
+
+### Step 3: Directory Structure
+Create content directories with `.gitkeep` files:
+- `content/pages/`, `content/posts/`, `content/portfolio/`, `content/layouts/`
+- `meta/pages/`, `meta/posts/`, `meta/portfolio/`, `meta/layouts/`
+
+### Step 4: Generate Configuration
+Create `.claude-wp.json` in project root with user's settings:
+```json
+{
+  "site_name": "User's Site Name",
+  "site_description": "User's description",
+  "production_url": "https://usersite.com",
+  "staging_url": "https://staging.usersite.com",
+  "setup_date": "2025-01-02",
+  "version": "1.0.0"
+}
+```
+
+### Step 5: Manual Configuration Instructions
+After the wizard completes, provide clear next steps:
+
+## ✅ Automatic Setup Complete!
+
+Your project structure is ready. Now complete these manual steps:
+
+### 1. Install WordPress Plugin
+1. Download the plugin folder: `wordpress/enfold-rest-meta/`
+2. Upload to your WordPress site: `wp-content/plugins/enfold-rest-meta/`
+3. Activate the plugin in WordPress admin
+
+### 2. Configure GitHub Repository
+Add these **Secrets** in GitHub → Settings → Secrets and variables → Actions:
+- `USERNAME` - Your WordPress username (with editor permissions)
 - `APP_PASSWORD` - WordPress Application Password
 
-### GitHub Variables  
-- `PRODUCTION_URL` - Production site URL (e.g., https://yoursite.com)
-- `STAGING_URL` - Staging site URL (e.g., https://staging.yoursite.com)
+Add these **Variables** in GitHub → Settings → Secrets and variables → Actions:
+- `PRODUCTION_URL` - {production_url from config}
+- `STAGING_URL` - {staging_url from config}
 
-### WordPress Plugin
-Upload and activate the Enfold REST Meta plugin from `wordpress/enfold-rest-meta/`
+### 3. Test Your Setup
+```bash
+# Create your first page
+/wp-create-page
 
-## Next Steps
+# Check status
+/wp-status
 
-1. Customize `theme/design-tokens.json` with your branding
-2. Create your first page with `/wp-create-page`
-3. Test deployment on staging branch
-4. Enable production deployment by removing workflow blocker
+# Push to staging for testing
+git add -A && git commit -m "feat: Initial setup"
+git push origin staging
+```
+
+### 4. Customize Your Site
+- Edit `theme/design-tokens.json` for branding
+- Add content in `content/pages/`
+- Review deployment in GitHub Actions
+
+**Ready to start building!** 🚀
+
+## Troubleshooting
+
+If setup fails:
+1. Check that all prerequisite requirements are met
+2. Verify GitHub repository has Actions enabled
+3. Ensure WordPress has Enfold theme installed
+4. See `context/claude/troubleshooting.md` for detailed help
