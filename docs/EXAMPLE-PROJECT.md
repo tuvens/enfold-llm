@@ -59,14 +59,24 @@ my-wordpress-site/
 
 ```json
 {
-  "wordpress_url": "https://mysite.com",
-  "staging_url": "https://staging.mysite.com",
-  "content_types": ["pages", "posts"],
-  "theme": {
-    "design_tokens": "theme/design-tokens.json"
+  "site": {
+    "name": "My Site Name",
+    "production_url": "https://mysite.com",
+    "staging_url": "https://staging.mysite.com"
+  },
+  "wordpress": {
+    "username": "",
+    "application_password": ""
+  },
+  "paths": {
+    "content": "content/",
+    "meta": "meta/",
+    "theme": "theme/"
   }
 }
 ```
+
+**Note:** The `wordpress` section is for local development scripts only. Never commit credentials.
 
 ## Example Content File (`content/pages/about.txt`)
 

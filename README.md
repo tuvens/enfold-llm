@@ -162,14 +162,24 @@ Edit `.claude-wp.json` in your repository root:
 
 ```json
 {
-  "wordpress_url": "https://yoursite.com",
-  "staging_url": "https://staging.yoursite.com",
-  "theme": "enfold",
-  "content_types": ["pages", "posts", "portfolio"],
-  "default_branch": "main",
-  "staging_branch": "staging"
+  "site": {
+    "name": "Your Site Name",
+    "production_url": "https://yoursite.com",
+    "staging_url": "https://staging.yoursite.com"
+  },
+  "wordpress": {
+    "username": "",
+    "application_password": ""
+  },
+  "paths": {
+    "content": "content/",
+    "meta": "meta/",
+    "theme": "theme/"
+  }
 }
 ```
+
+**Note:** The `wordpress` section is for local development scripts only. Never commit credentials.
 
 ### Step 5: Install the WordPress Plugin
 

@@ -45,14 +45,24 @@ Create content directories with `.gitkeep` files:
 Create `.claude-wp.json` in project root with user's settings:
 ```json
 {
-  "site_name": "User's Site Name",
-  "site_description": "User's description",
-  "production_url": "https://usersite.com",
-  "staging_url": "https://staging.usersite.com",
-  "setup_date": "2025-01-02",
-  "version": "1.0.0"
+  "site": {
+    "name": "User's Site Name",
+    "production_url": "https://usersite.com",
+    "staging_url": "https://staging.usersite.com"
+  },
+  "wordpress": {
+    "username": "",
+    "application_password": ""
+  },
+  "paths": {
+    "content": "content/",
+    "meta": "meta/",
+    "theme": "theme/"
+  }
 }
 ```
+
+**Note:** The `wordpress` section is for local development scripts only. Never commit credentials to this file.
 
 ### Step 5: Manual Configuration Instructions
 After the wizard completes, provide clear next steps:
