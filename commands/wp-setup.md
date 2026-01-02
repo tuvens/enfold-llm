@@ -23,7 +23,7 @@ Make sure you have:
 ### Step 1: Project Information
 Ask the user for:
 - **Production URL** (e.g., https://yoursite.com)
-- **Staging URL** (optional, e.g., https://staging.yoursite.com) 
+- **Staging URL** (optional, e.g., https://staging.yoursite.com)
 - **Site Name** (for documentation)
 - **Site Description** (optional, for context)
 
