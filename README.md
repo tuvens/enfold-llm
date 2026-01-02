@@ -250,7 +250,6 @@ your-site/
 │   └── pages/*.json            # WordPress IDs and metadata
 ├── theme/
 │   └── design-tokens.json      # Brand colors, fonts, assets
-├── scripts/                    # Deployment scripts
 ├── claude/                     # LLM documentation and context
 └── .claude-wp.json             # Site configuration
 ```
