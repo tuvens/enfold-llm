@@ -46,7 +46,7 @@ For complex layouts or unfamiliar shortcodes, consult the full schema:
 - **Best Practices:** `context/enfold-knowledge/enfold-guidance.md` - Patterns and recommendations
 - **Quick Reference:** `context/claude/enfold-shortcodes.md` - Common shortcodes (auto-loaded)
 
-When creating pages with advanced elements (tabs, accordions, maps, sliders), read the relevant section from `enfold-schema.json` first.
+When creating pages with advanced elements (tabs, accordions, maps, sliders), read the relevant section from `context/enfold-knowledge/enfold-schema.json` first.
 
 ## Notes
 
