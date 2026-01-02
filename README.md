@@ -4,34 +4,28 @@ GitOps workflow for managing WordPress/Enfold websites through LLM assistants li
 
 Create, update, and deploy WordPress pages, posts, portfolio items, and theme settings directly from your AI coding assistant—with full version control and automatic deployment via GitHub Actions.
 
-## Quick Start (5 minutes)
+## Quick Start (60 seconds)
 
-### 1. Add plugin to your project
+### 1. Create repository
 ```bash
 git submodule add https://github.com/tuvens/enfold-llm.git .claude/plugins/enfold-llm
 ```
 
-### 2. Install WordPress plugin
-Upload `wordpress/enfold-rest-meta/` folder as a zip to your WordPress site and activate.
+### 2. Add plugin as submodule
+```bash
+cd .claude/plugins/enfold-llm
+```
 
-### 3. Configure GitHub secrets
-In your repo → Settings → Secrets:
-- `USERNAME` - WordPress username
-- `APP_PASSWORD` - Application password from WordPress
+### 3. Open Claude Code
+Claude will detect the plugin automatically.
 
-### 4. Configure GitHub variables
-In your repo → Settings → Variables:
-- `PRODUCTION_URL` - https://yoursite.com
-- `STAGING_URL` - https://staging.yoursite.com
+### 4. Run setup wizard
+```bash
+/wp-setup
+```
 
-### 5. Configure your site
-Create `.claude-wp.json` in your repository root with your site details. **Important:** Do not add credentials to this file; use GitHub secrets.
-
-### 6. Initialize project
-Run `/wp-setup` in Claude Code, then `/wp-status` to verify.
-
-### 7. Create your first page
-Run `/wp-create-page` and follow the prompts.
+### 5. Follow prompts
+The wizard will guide you through configuration and provide next steps for GitHub and WordPress setup.
 
 For detailed instructions, see [docs/INSTALLATION.md](docs/INSTALLATION.md).
 
