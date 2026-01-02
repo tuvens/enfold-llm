@@ -151,7 +151,6 @@ your-site/
 │   └── portfolio/*.txt            # Portfolio items
 ├── meta/
 │   └── pages/*.json               # WordPress page IDs (auto-generated)
-├── scripts/                       # Deployment scripts
 ├── theme/design-tokens.json       # Theme settings
 └── claude/                        # Documentation
 ```
