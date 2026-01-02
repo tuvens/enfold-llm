@@ -8,7 +8,7 @@ This plugin enables GitOps workflows for WordPress sites using the Enfold theme.
 
 This interactive wizard will:
 - Copy template files to your repo
-- Create the required directory structure  
+- Create the required directory structure
 - Guide you through configuration
 - Generate deployment scripts
 
