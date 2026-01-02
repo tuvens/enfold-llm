@@ -22,7 +22,7 @@ Before starting:
 ## After Setup
 
 1. **Install WordPress Plugin**: Upload `wordpress/enfold-rest-meta/` to your site
-2. **Configure GitHub Secrets**: Add `USERNAME` and `APP_PASSWORD` 
+2. **Configure GitHub Secrets**: Add `USERNAME` and `APP_PASSWORD`
 3. **Set GitHub Variables**: Add `PRODUCTION_URL` and `STAGING_URL`
 4. **Create Your First Page**: Run `/wp-create-page` to start
 
