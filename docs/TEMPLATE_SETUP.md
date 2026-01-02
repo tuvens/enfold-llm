@@ -55,8 +55,8 @@ If you have a template repository set up:
 1. **Add Submodule**
    ```bash
    cd your-existing-repo
-   git submodule add https://github.com/tuvens/enfold-llm.git .claude-plugins/enfold-llm
-   cd .claude-plugins/enfold-llm
+   git submodule add https://github.com/tuvens/enfold-llm.git .claude/plugins/enfold-llm
+   cd .claude/plugins/enfold-llm
    ```
 
 2. **Initialize Project**
@@ -66,7 +66,7 @@ If you have a template repository set up:
 
 3. **Update Submodule** (for plugin updates)
    ```bash
-   git submodule update --remote .claude-plugins/enfold-llm
+   git submodule update --remote .claude/plugins/enfold-llm
    ```
 
 ## Creating Your Own Template Repository

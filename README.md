@@ -6,25 +6,20 @@ Create, update, and deploy WordPress pages, posts, portfolio items, and theme se
 
 ## Quick Start (60 seconds)
 
-### 1. Create repository
+### 1. Add plugin as submodule
 ```bash
 git submodule add https://github.com/tuvens/enfold-llm.git .claude/plugins/enfold-llm
 ```
 
-### 2. Add plugin as submodule
-```bash
-cd .claude/plugins/enfold-llm
-```
-
-### 3. Open Claude Code
+### 2. Open Claude Code
 Claude will detect the plugin automatically.
 
-### 4. Run setup wizard
+### 3. Run setup wizard
 ```bash
 /wp-setup
 ```
 
-### 5. Follow prompts
+### 4. Follow prompts
 The wizard will guide you through configuration and provide next steps for GitHub and WordPress setup.
 
 For detailed instructions, see [docs/INSTALLATION.md](docs/INSTALLATION.md).
