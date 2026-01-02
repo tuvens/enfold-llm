@@ -87,7 +87,7 @@ If you have a template repository set up:
 3. **Team Usage**
    ```bash
    # Team members create new sites:
-   # 1. Use template on GitHub  
+   # 1. Use template on GitHub
    # 2. Clone locally
    # 3. Run /wp-setup with site-specific details
    ```
