@@ -7,7 +7,7 @@ This Claude Code plugin enables GitOps workflows for WordPress sites using the E
 **New to this plugin?** Check if you need to initialize your project:
 
 1. **No `.claude-wp.json` file?** → Run `/wp-setup` to configure your project
-2. **No `content/` directory?** → Project not initialized, run `/wp-setup`  
+2. **No `content/` directory?** → Project not initialized, run `/wp-setup`
 3. **First time here?** → Read `GETTING_STARTED.md` then run `/wp-setup`
 
 ## 🚨 Critical Workflow Rules
